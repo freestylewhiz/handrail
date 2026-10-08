@@ -1,0 +1,20 @@
+{
+  "name": "handrail",
+  "version": "1.0.0-alpha.6+codex.20261008041952",
+  "description": "Coordinate Codex and Cursor workers with durable Handrail workflow, Vikunja boards and Git.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Handrail",
+    "shortDescription": "Local-first project workflow",
+    "longDescription": "Coordinate Codex and Cursor workers with durable Handrail workflow, Vikunja boards and Git.",
+    "developerName": "Handrail",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "Connect this repository to a Vikunja board."
+    ]
+  }
+}

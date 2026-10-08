@@ -1,0 +1,31 @@
+evidence_id,session_id,rollout_line,timestamp_utc,timestamp_kst,finding,observed_summary
+E01,01a10e6f-4986-7c83-8bf1-cccea315c958,1334,2026-10-06T00:52:59.944Z,2026-10-06T09:52:59.944000+09:00,조율자 실효 정책,프로젝트와 임시 경로에 쓰기 허용; .git은 read; network restricted
+E02,01a10e6f-4986-7c83-8bf1-cccea315c958,554,2026-10-05T23:51:24.003Z,2026-10-06T08:51:24.003000+09:00,초기 Git 커밋 차단,.git/index.lock 생성에서 Read-only file system
+E03,01a10e6f-4986-7c83-8bf1-cccea315c958,560,2026-10-05T23:51:27.226Z,2026-10-06T08:51:27.226000+09:00,Git 커밋 escalation,같은 초기 커밋을 require_escalated로 요청
+E04,01a10e6f-4986-7c83-8bf1-cccea315c958,623,2026-10-06T00:23:57.236Z,2026-10-06T09:23:57.236000+09:00,worker 시작 불확실,HERDR_PROMPT_UNKNOWN; agent_prompt_stalled; 5000ms 동안 상태 전이 관측 없음
+E05,01a10e6f-4986-7c83-8bf1-cccea315c958,625,2026-10-06T00:23:57.664Z,2026-10-06T09:23:57.664000+09:00,Codex 시작 화면,0.160.0에서 0.160.1로 자동 업데이트 출력
+E06,01a10e6f-4986-7c83-8bf1-cccea315c958,634,2026-10-06T00:24:03.139Z,2026-10-06T09:24:03.139000+09:00,agent 소실,collect가 agent_not_found 반환
+E07,01a10e6f-4986-7c83-8bf1-cccea315c958,658,2026-10-06T00:24:21.935Z,2026-10-06T09:24:21.935000+09:00,정식 복구 실패,recover도 agent_get 단계에서 agent_not_found 반환
+E08,01a10e6f-4986-7c83-8bf1-cccea315c958,1046,2026-10-06T00:44:03.033Z,2026-10-06T09:44:03.033000+09:00,수동 pane 재생성,동일 worktree에 wV:p4 생성
+E09,01a10e6f-4986-7c83-8bf1-cccea315c958,1113,2026-10-06T00:46:32.364Z,2026-10-06T09:46:32.364000+09:00,복구 후 관측 identity,recover 성공 응답의 live pane은 wV:p4
+E10,01a10e6f-4986-7c83-8bf1-cccea315c958,1281,2026-10-06T00:51:04.790Z,2026-10-06T09:51:04.790000+09:00,Backend 완료 근거,Done/verified; command check는 backend_syntax; HTTP 및 persistence 미검증 명시
+E11,01a10e6f-4986-7c83-8bf1-cccea315c958,1332,2026-10-06T00:52:59.943Z,2026-10-06T09:52:59.943000+09:00,컨텍스트 압축,compacted 이벤트
+E12,01a10e6f-4986-7c83-8bf1-cccea315c958,1343,2026-10-06T00:53:06.895Z,2026-10-06T09:53:06.895000+09:00,명령 namespace 혼동,직접 herdr collect 호출; unknown command
+E13,01a10e6f-4986-7c83-8bf1-cccea315c958,1367,2026-10-06T00:53:25.807Z,2026-10-06T09:53:25.807000+09:00,workflow 혼동,legacy run list 결과 []
+E14,01a10e6f-4986-7c83-8bf1-cccea315c958,1394,2026-10-06T00:53:46.639Z,2026-10-06T09:53:46.639000+09:00,Frontend 설치 성공,동일 worktree에서 npm install 완료
+E15,01a10e6f-4986-7c83-8bf1-cccea315c958,1399,2026-10-06T00:53:55.020Z,2026-10-06T09:53:55.020000+09:00,Frontend 빌드 권한 실패,vite.config.js.timestamp-*.mjs 생성 EROFS
+E16,01a10e6f-4986-7c83-8bf1-cccea315c958,1406,2026-10-06T00:54:02.966Z,2026-10-06T09:54:02.966000+09:00,산출 경로 변경 실패,outDir /tmp 지정 후에도 같은 설정 임시 파일 EROFS
+E17,01a10e6f-4986-7c83-8bf1-cccea315c958,1467,2026-10-06T00:55:19.847Z,2026-10-06T09:55:19.847000+09:00,임시 설정 복사 실패,/tmp 설정에서 vite 모듈 해석 ERR_MODULE_NOT_FOUND
+E18,01a10e6f-4986-7c83-8bf1-cccea315c958,1474,2026-10-06T00:55:29.726Z,2026-10-06T09:55:29.726000+09:00,미지원 옵션 시도,설치된 Vite에서 --configLoader Unknown option
+E19,01a10e6f-4986-7c83-8bf1-cccea315c958,1479,2026-10-06T00:55:36.720Z,2026-10-06T09:55:36.720000+09:00,미지원 옵션 반복,동일 --configLoader 오류 재발
+E20,01a10e6f-4986-7c83-8bf1-cccea315c958,1507,2026-10-06T00:56:21.532Z,2026-10-06T09:56:21.532000+09:00,Herdr 제어 권한 실패,agent prompt: PermissionDenied / Operation not permitted
+E21,01a10e6f-4986-7c83-8bf1-cccea315c958,1567,2026-10-06T00:59:17.509Z,2026-10-06T09:59:17.509000+09:00,Herdr pane 제어 실패,pane run wV:p4 rtk pwd: PermissionDenied
+E22,01a10e6f-4986-7c83-8bf1-cccea315c958,1574,2026-10-06T00:59:32.289Z,2026-10-06T09:59:32.289000+09:00,빌드 escalation,같은 worktree의 npm run build를 require_escalated로 요청
+E23,01a10e6f-4986-7c83-8bf1-cccea315c958,1587,2026-10-06T01:02:11.462Z,2026-10-06T10:02:11.462000+09:00,동일 worktree 빌드 성공,Vite 5.4.21; 32 modules; built in 10.82s
+E24,01a10e6f-4986-7c83-8bf1-cccea315c958,1635,2026-10-06T01:03:27.341Z,2026-10-06T10:03:27.341000+09:00,원격 API 접근 실패,VIKUNJA_CONNECTION_FAILED: GET /tasks/23
+E25,01a10e6f-4986-7c83-8bf1-cccea315c958,1644,2026-10-06T01:03:44.496Z,2026-10-06T10:03:44.496000+09:00,원격 기록 재시도 성공,escalation 재시도 후 comment in_sync 및 review accept
+E26,01a10e6f-4986-7c83-8bf1-cccea315c958,1651,2026-10-06T01:03:54.622Z,2026-10-06T10:03:54.622000+09:00,Frontend 통합,commit da14fc829d29a55fb9bf14e0ff0303cca6a16b00
+E27,01a10e6f-4986-7c83-8bf1-cccea315c958,1666,2026-10-06T01:04:20.012Z,2026-10-06T10:04:20.012000+09:00,통합 저장소 검사 실패,frontend_build exit 127; vite: command not found
+E28,01a10e6f-4986-7c83-8bf1-cccea315c958,1679,2026-10-06T01:04:34.280Z,2026-10-06T10:04:34.280000+09:00,통합 저장소 의존성 설치,64 packages 추가; audit 경고 moderate 1 high 1
+E29,01a10e6f-4986-7c83-8bf1-cccea315c958,1690,2026-10-06T01:04:59.460Z,2026-10-06T10:04:59.460000+09:00,Frontend 완료,Done/verified; 통합 checkout frontend_build exit 0
+E30,01a10e6f-4986-7c83-8bf1-cccea315c958,1760,2026-10-06T01:06:39.937Z,2026-10-06T10:06:39.937000+09:00,검증 서버 포트 충돌,PORT=3001 서버 시작 EADDRINUSE

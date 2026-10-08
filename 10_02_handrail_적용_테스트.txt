@@ -1,0 +1,68 @@
+Handrail 적용 점검 — 2026-10-02
+=================================
+
+목적
+----
+새 Express 저장소를 만들어 Vikunja 프로젝트에 Handrail을 연결하고, 실제 초기 설치 흐름의 오류를 재현·수정한다. 이번 점검은 HR-NEXT-006 Review 열 정책과 HR-NEXT-012 새 저장소 초기 설정 문제를 함께 확인한다. 확장 가능한 체크 항목과 기대 결과는 docs/validation/2026-10-02-handrail-install-test-design.md에 기록했다.
+
+보안 조건
+---------
+- 제공된 일회용 검증 token은 두 번의 숨김 terminal 입력에서만 사용했다: Vikunja v2 프로젝트 생성, 격리된 XDG 설정의 Handrail 연결.
+- token을 명령 인자, source, Git 저장소, 결과 파일, test output에 기록하지 않았다.
+- 별도 XDG_CONFIG_HOME/XDG_DATA_HOME을 /tmp 아래에 두었다. 저장소에는 instance/project/view/state ID만 포함한다.
+- 원격 test project와 Review 열은 점검 산출물로 남겨 둔다. 계획/작업 카드나 worker run은 만들지 않았다.
+
+수행 지침 및 결과
+----------------
+1. 비어 있던 `/project_workspace/handrail_poc` 아래에 임의 이름의 테스트 저장소 `/project_workspace/handrail_poc/express-handrail-test`를 만들었다. Express scaffold 생성 뒤 요청한 하위 폴더 구조에 맞춰 저장소 전체를 그 위치로 옮겼다.
+2. 설치된 Express Generator `4.16.1`에서 `rtk express .`를 실행해 기본 Express 앱을 만들었다. `rtk git init`으로 Git 저장소를 초기화했다. 기본 scaffold 파일은 아직 미커밋 상태다.
+3. 토큰은 코드/파일에 넣지 않고 숨김 입력으로만 제공했다. Handrail 연결 프로필은 이번 점검만을 위한 격리된 XDG 경로에 저장했다.
+4. Vikunja v2 API에서 프로젝트 `Handrail Express PoC 2026-10-02`를 만들었다. 응답은 HTTP 201, project ID `8`이었다.
+5. 새 repo의 첫 연결 전 점검은 `PROJECT_NOT_BOUND`와 종료 코드 `2`를 반환했다. 이는 미연결 저장소에 대한 예상 결과다.
+6. 원래 설치본에서 `help setup`은 허용되지 않은 help topic으로 종료 코드 `2`를 냈다. 또 상태 응답은 v0.4 런타임인데도 `0.3.0-rc.4`를 보고했다. 이 문제들을 재현하고 `help setup` 안내와 `__version__` 사용을 반영했다.
+7. 첫 binding 발견 결과, project `8`의 manual Kanban view `36`에는 To-Do `30`, Doing `31`, Done `32`만 있고 Review는 없었다. 기존 구현은 네 열을 하나씩 고르게 한 뒤 Review가 없으면 중단됐다. 서브에이전트가 원격 변경 전에 이를 발견해 멈췄으므로 이 단계에서는 쓰기나 binding 저장이 없었다.
+8. 수정 소스의 집중 검증으로 setup/CLI 테스트 30개가 통과했다. 최종 Handrail `0.4.0` 패키지 빌드와 distribution 검증도 통과했다. 최종 ZIP은 `/tmp/handrail-poc-build-20261002/handrail-0.4.0.zip`, SHA256 `842ac41f076db86cb6802127195b49a4795e27308ba80e7f60ad7c2d9c860786`이다. live binding 뒤 불확실한 쓰기 결과를 성공으로 잘못 귀속하지 않도록 metadata를 보완하고 package를 다시 만들었다. live binding은 그 보완 전 candidate로 수행했으며 정상 생성 경로는 동일하다. 불확실한 쓰기 경로는 최종 30개 단위 테스트로 검증했다.
+9. 새 번들 runtime으로 `help setup`, 초기 status/doctor, binding을 다시 수행했다. 프로젝트/view와 기존 열 ID를 표시한 뒤 Review 생성을 확인받았다. Vikunja가 새 Review 열 ID `33`을 반환했고, Handrail은 bucket 목록을 재조회해 확인했다. 이후 source는 응답이 불확실했을 때 재조회로 발견한 열을 이번 실행이 생성했다고 단정하지 않도록 보완했다.
+10. 로컬 binding은 다음 ID로 저장됐다: todo `30`, doing `31`, review `33`, done `32`. `project status`와 `status`는 project `8` / view `36`, `ready: true`, version `0.4.0`을 보고했다. `doctor`는 Git, repository binding, Vikunja v2, Codex worker 검사에서 모두 `ok`, `exit_code: 0`을 반환했다.
+11. `/project_workspace/handrail_poc/express-handrail-test/.handrail/project.json`에는 workspace/instance/project/view/state ID만 있다. repo 파일의 token 접두어 검사에서는 일치가 없었다.
+12. 최종 repo 점검에서 `AGENTS.md`, `.agents/AGENTS.md`, README는 없었다. 이 선택 문서의 부재가 연결과 진단 흐름을 중단시키지 않았다.
+
+이번 코드 변경
+--------------
+- `handrail help setup`: setup, binding, 진단과 복구 순서를 오프라인으로 안내한다.
+- 프로젝트 binding에서 Todo/Doing/Done은 명확한 제목을 자동 매핑한다.
+- 기존 Review 열은 재사용한다. 없으면 project/view와 알려진 상태 매핑을 preview하고 확인을 받은 다음 생성한다.
+- 생성 뒤 bucket 목록을 다시 읽는다. 성공 응답이 불명확하면 재조회로 이미 생성된 열을 재사용해 중복 요청을 피한다.
+- 401/403, 미지원 route, 불확실한 네트워크 결과에 따라 다른 복구 안내를 제공한다. 권한 거부 때 token scope 확대를 요구하지 않는다.
+- Review 생성 취소/실패에서는 로컬 binding을 저장하지 않는다. 결과에는 원격 변경 여부를 명시한다.
+- 상태 응답 버전을 실제 runtime `__version__`과 맞췄다.
+- 설치 스킬, installation 문서, Vikunja v2 계약 및 백로그를 새 동작과 일치시켰다.
+
+산출물
+------
+- 테스트 부모 폴더: `/project_workspace/handrail_poc`
+- Express Git 저장소: `/project_workspace/handrail_poc/express-handrail-test`
+- Vikunja project: `Handrail Express PoC 2026-10-02` (ID `8`)
+- Kanban view: ID `36`; Todo `30`, Doing `31`, Review `33`, Done `32`
+- 구현 설계: `docs/validation/2026-10-02-handrail-install-test-design.md`
+- 백로그: `handrail-dev-spec/v0/BACKLOG.md`
+- 현재 소스는 workspace의 변경 사항으로 남아 있으며, 게시·배포하지 않았다.
+
+정리
+----
+테스트 성공을 확인한 뒤 `project unbind`로 임시 로컬 registry 연결을 정리하고, `connection forget`으로 프로필과 token credential을 제거했다. 격리된 XDG 디렉터리도 삭제했다. 서버에서 발급한 token 자체는 revoke하지 않았다. Express 프로젝트, 안전한 `.handrail/project.json`, Vikunja test project와 Review 열은 재현 근거로 보존한다. 임시 프로필을 지웠으므로 지속 사용 전에는 별도 연결을 setup한 다음 같은 Vikunja instance임을 확인해 기존 binding에 연결해야 한다.
+
+추가 적용 점검: v0.5.0 Herdr 오케스트레이션
+------------------------------------------
+이번 추가 검증은 기존 설치 점검과 별개로 support-herder 브랜치에서 수행했다.
+- 지정한 handrail_v0.5 프로젝트(ID 13, 호스트 포트 58821)와 frontend/backend 하위 보드를 사용했다.
+- express . --no-view로 herdr-employee-crud와 herdr-employee-repeat 테스트 저장소를 생성했다.
+- 조율자가 기획/작업 카드를 만들고 recommend의 수동 지정 안내(c)를 출력한 다음, 지정된 Cursor Auto 워커들을 동일 Herdr 공간에서 실행했다.
+- 의미 있는 지시와 검토/통합/완료 이력은 기획카드 댓글에 기록했다. 구현 보조 서브에이전트는 GPT-6-LUNA low를 사용했다.
+- 첫 계획 13은 frontend 추가 작업 16, 조율자의 수정 지시, 재검증 후 시뮬레이션 Done 승인 및 공간 종료까지 검증했다.
+- 첫 바인딩을 해제하고 이번 테스트가 만든 하위 프로젝트 14/15만 정리한 뒤, 새 하위 프로젝트 16/17과 두 번째 저장소에서 반복했다.
+- 두 번째 계획 17은 clear 정책으로 공간을 닫고 새 수정 작업 20/21을 병렬로 수행했다. 새 워커 입력 준비 확인 개선도 카드 22로 실제 검증했다.
+- 최종 계획 17은 Review, 작업 18~22는 Done이다. 공간 herdr-employee-repeat (17), ID wS와 마지막 워커들은 사용자가 확인할 수 있도록 유지했다.
+- API 자동 검사와 실제 Chromium의 CRUD/오류/XSS 안전 렌더링/리뷰 수정 검사가 통과했다.
+- 설계, 관측 결과, 정리 범위와 JSON 증거는 docs/testing/herdr-acceptance.md 및 docs/testing/evidence/에 기록했다.
+- 이번에는 기존 호스트에 저장된 프로필로 인증했다. 예전에 채팅으로 전달된 일회용 토큰을 재사용하거나 구현에 포함하지 않았다.

@@ -1,0 +1,9 @@
+[
+  {
+    "check_id": "backend_syntax",
+    "kind": "command",
+    "argv": ["node", "--check", "app.js"],
+    "working_directory": "backend",
+    "pass_condition": "Node exits successfully after parsing the backend entry point."
+  }
+]

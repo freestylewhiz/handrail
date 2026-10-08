@@ -1,0 +1,22 @@
+{
+  "review_date": "2026-10-06",
+  "timezone": "Asia/Seoul",
+  "primary_session": "01a10e6f-4986-7c83-8bf1-cccea315c958",
+  "primary_rollout_path": "/home/dyhwang23/.codex/sessions/2026/10/06/rollout-2026-10-06T08-38-56-01a10e6f-4986-7c83-8bf1-cccea315c958.jsonl",
+  "primary_snapshot_end_utc": "2026-10-06T01:07:18.037Z",
+  "primary_snapshot_lines": 1787,
+  "related_sessions": [
+    "01a10e66-2e0e-7580-8093-27b81f1ad1ce",
+    "01a10e6c-fec8-7202-8315-20ee26179f43"
+  ],
+  "repository": "/project_workspace/handrail_poc/handrail_test_6",
+  "workspace_id": "be9720f2a8734176a14bd91aecc5b7ea",
+  "plan_id": 23,
+  "work_ids": [
+    24,
+    25
+  ],
+  "plugin_version": "0.5.0+codex.20261005232722",
+  "source_revision": "58651c76808012ded0e828990fff3a45db3347eb",
+  "scope": "Read-only session/source analysis; no workflow mutations or worker executions. Raw transcripts and credentials are not included."
+}

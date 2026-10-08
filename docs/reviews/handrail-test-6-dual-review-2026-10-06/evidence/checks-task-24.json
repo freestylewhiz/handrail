@@ -1,0 +1,9 @@
+[
+  {
+    "check_id": "frontend_build",
+    "kind": "command",
+    "argv": ["npm", "run", "build"],
+    "working_directory": "frontend",
+    "pass_condition": "The frontend production build completes successfully."
+  }
+]

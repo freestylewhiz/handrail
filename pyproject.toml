@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "handrail-workflow"
+version = "1.0.0a6"
+description = "Handrail workflow and agent rooms connected to Herdr and Vikunja"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+handrail = "handrail.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["handrail", "handrail.*"]

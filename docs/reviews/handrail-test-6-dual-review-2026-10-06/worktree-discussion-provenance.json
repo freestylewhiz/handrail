@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "recorded_at_utc": "2026-10-06T02:00:54.440711+00:00",
+  "transport": "Herdr interactive CLI",
+  "workspace_id": "wW",
+  "existing_sessions_reused": true,
+  "rounds": 2,
+  "method": "Round 1 independent judgments; round 2 each reviewer read the other first response, answered objections, and reconciled a concrete placement policy. Root compared final responses and documented remaining interpretation differences.",
+  "reviewers": [
+    {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-astra",
+      "pane_id": "wW:p1",
+      "provider_session_id": "01a10ed6-5786-72e1-b7dd-d419e7731887",
+      "model_verified": "Launch argv and visible GPT-6-Astra high indicator"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.7-high",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-grok",
+      "pane_id": "wW:p2",
+      "provider_session_id": "a3f7e580-112a-426f-aa04-688cde4e750a",
+      "model_verified": "Launch argv and visible Grok 4.7 256K High indicator"
+    }
+  ],
+  "scope": "Read-only discussion; no implementation, target worktree, project, card, or host policy changes. No tests, installs, or servers executed.",
+  "artifacts": {
+    "worktree-astra-round1.md": "17de8498ba617f34dcbc4ffee9cd7fbc3033290cb5fd45b0877c22cce3029def",
+    "worktree-astra-round2.md": "47ba4e2e260a421b4f660abb6afd4d9fccce0ebacdfe8194f4c072b8f85e8dbc",
+    "worktree-discussion-brief.md": "c4bd7ebfb038e6f29beb083ca43630ef5f1e0392aae5826177f9aa83c60f1685",
+    "worktree-discussion-source-notes.md": "adc8a81e57d338207ddd663e80478aa2bc3416ee4a0f1fa9ff285e5e6ea3d1fd",
+    "worktree-grok-round1.md": "d80daa662e64ec82f0f58ad56f27265fa511c3ae617dd668b958928bcabbc261",
+    "worktree-grok-round2.md": "688a69040c49e5ceea29b996f153fd3d80882fc36f37192cbd44c84c3a2f3639",
+    "worktree-placement-discussion.md": "f8bc28da9b731c509c9c5d833a786389cb8ddd60d82ac1c8532a37b70b47bdbd",
+    "worktree-round2-brief.md": "ea9a267c92ccea352465d91b81798cb53e7ee9e0dd52fce0cdb224e72cff383a"
+  },
+  "completion_markers": [
+    "WORKTREE_ROUND1_COMPLETE_ASTRA",
+    "WORKTREE_ROUND1_COMPLETE_GROK",
+    "WORKTREE_ROUND2_COMPLETE_ASTRA",
+    "WORKTREE_ROUND2_COMPLETE_GROK"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "complete",
+  "recorded_at_utc": "2026-10-06T02:17:12.739314+00:00",
+  "transport": "Herdr interactive CLI",
+  "workspace_id": "wW",
+  "existing_sessions_reused": true,
+  "rounds": 2,
+  "reviewers": [
+    {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-astra",
+      "pane_id": "wW:p1",
+      "provider_session_id": "01a10ed6-5786-72e1-b7dd-d419e7731887",
+      "model_verified": "Launch argv and visible GPT-6-Astra high indicator"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.7-high",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-grok",
+      "pane_id": "wW:p2",
+      "provider_session_id": "a3f7e580-112a-426f-aa04-688cde4e750a",
+      "model_verified": "Launch argv and visible Grok 4.7 256K High indicator"
+    }
+  ],
+  "method": "Independent first review, exchanged first responses and official/local contract notes, final cross-review; root adjudicated inaccurate wording against installed source/schema and official documentation.",
+  "scope": "User-authorized discussion with existing review agents, read-only diagnostic commands, documentation. No target project/card/environment changes or implementation tests.",
+  "herdr_version": "0.9.1",
+  "protocol": 22,
+  "caller_mode_observed": "external, HERDR_ENV absent, no fabricated context",
+  "completion_markers": [
+    "HERDR_ENV_ROUND1_COMPLETE_ASTRA",
+    "HERDR_ENV_ROUND1_COMPLETE_GROK",
+    "HERDR_ENV_ROUND2_COMPLETE_ASTRA",
+    "HERDR_ENV_ROUND2_COMPLETE_GROK"
+  ],
+  "artifacts": {
+    "herdr-env-api-contract.json": "2d5372c4c0e3dd697ed94fed915f16b4cfa88381d2110a16de5684a00af4692e",
+    "herdr-env-astra-round1.md": "6989f2b5a959766b1ccdd7495f57e85d96b16d6d1321f6b2b9b03b40008c4033",
+    "herdr-env-astra-round2.md": "2565befd0d76eb5898e2406314acec07861bf91bf240c0e3cf6803b4640b8d55",
+    "herdr-env-discussion-brief.md": "4243ed1a1c366decd27e918c4e7b2be45e8487a255c706a72b3b1f2eb6c0177c",
+    "herdr-env-discussion.md": "f9abbf40597267bea3b87cb1c769664de42dcb6c0ebece0cb8f6b030e63ce1fd",
+    "herdr-env-grok-round1.md": "5c0560fab4eadc237238e838c2ad5b19cf387225794cba6cf2f553d763653ed1",
+    "herdr-env-grok-round2.md": "82971bc117f898bcd3528b0a83f181c8d2437da79fcb12528960ed2f440f9f0c",
+    "herdr-env-observations.json": "6c97feb6bb21c1b0faa88eb628d6746e68a05c6f48e61d98eddd75b1fbf6c264",
+    "herdr-env-round2-brief.md": "34f1f18323b242aa734c8c1625c99b04e187e5b90ffc9fac1e1a5bbb6038d01d",
+    "herdr-env-source-notes.md": "2b99055b4fd31cebb6cd111dbbce262fdab5259671a0fe423ba9f5168fe723c0"
+  }
+}

@@ -1,0 +1,28 @@
+source_line,decision,prefix,scope_note
+12,allow,rtk env,current user-level rule; creation time/project ownership not established
+23,allow,rtk python3 -I $HOME/.codex/plugins/cache/handrail/handrail/0.3.0-rc.4/scripts/handrail.py task create,current user-level rule; creation time/project ownership not established
+24,allow,rtk python3 -I $HOME/.codex/plugins/cache/handrail/handrail/0.3.0-rc.4/scripts/handrail.py,current user-level rule; creation time/project ownership not established
+25,allow,rtk agent models,current user-level rule; creation time/project ownership not established
+26,allow,rtk python3 -I /tmp/handrail-board-discovery.py,current user-level rule; creation time/project ownership not established
+27,allow,rtk python3 -I /tmp/handrail-relocate-work.py prepare-boards,current user-level rule; creation time/project ownership not established
+28,allow,rtk python3 -I /tmp/handrail-relocate-work.py move-work,current user-level rule; creation time/project ownership not established
+29,allow,rtk git add .handrail/project.json .handrail/specs.json docs/specs docs/implementation-plan.md,current user-level rule; creation time/project ownership not established
+30,allow,rtk git commit -m 'Plan social features and bind frontend/backend work boards',current user-level rule; creation time/project ownership not established
+31,allow,"rtk ps -o pid,ppid,comm,etime,time,wchan -p 3670920,3671039",current user-level rule; creation time/project ownership not established
+32,allow,rtk ps,current user-level rule; creation time/project ownership not established
+33,allow,rtk cp -a /project_workspace/hello_handrail_express/node_modules $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/8aff3c43af0a/node_modules,current user-level rule; creation time/project ownership not established
+34,allow,rtk node --test,current user-level rule; creation time/project ownership not established
+35,allow,rtk python3 -I /tmp/handrail-start-task7-retry.py,current user-level rule; creation time/project ownership not established
+36,allow,rtk git status --short,current user-level rule; creation time/project ownership not established
+38,allow,rtk python3 /tmp/handrail-seed-task8.py,current user-level rule; creation time/project ownership not established
+39,allow,rtk node /tmp/handrail-task8-browser.cjs $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/32d508f90f02,current user-level rule; creation time/project ownership not established
+40,allow,rtk git diff -- package.json routes/index.js views/employees.jade,current user-level rule; creation time/project ownership not established
+41,allow,rtk python3 /tmp/handrail-seed-task8-retry.py,current user-level rule; creation time/project ownership not established
+42,allow,rtk node /tmp/handrail-task8-browser.cjs $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/4ab29b4dd7da,current user-level rule; creation time/project ownership not established
+43,allow,rtk git diff --check,current user-level rule; creation time/project ownership not established
+44,allow,rtk python3 /tmp/handrail-seed-task9.py,current user-level rule; creation time/project ownership not established
+45,allow,rtk node /tmp/handrail-review-quiz.cjs $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/a204e0a44734,current user-level rule; creation time/project ownership not established
+46,allow,rtk npm test,current user-level rule; creation time/project ownership not established
+47,allow,rtk python3 /tmp/handrail-seed-task9-retry.py,current user-level rule; creation time/project ownership not established
+48,allow,rtk node /tmp/handrail-review-quiz.cjs $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/616ed95ab13d,current user-level rule; creation time/project ownership not established
+49,allow,rtk node /tmp/handrail-review-quiz-recovery.cjs $HOME/.local/share/handrail/projects/fb6c8334dbcf4251bedb36beea32a793/worktrees/616ed95ab13d,current user-level rule; creation time/project ownership not established

@@ -1,0 +1,73 @@
+{
+  "recorded_at": "2026-10-06T04:34:33.434315+00:00",
+  "branch": "rebuild/handrail-agentroom-v1",
+  "version": "1.0.0a1",
+  "git_state": "uncommitted working tree; existing history retained",
+  "herdr_workspace": "wW",
+  "agents": [
+    {
+      "name": "hr-review-astra",
+      "pane": "wW:p1",
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "resume_session": "01a10ed6-5786-72e1-b7dd-d419e7731887",
+      "completion": "REBUILD_EXECUTION_HARDENED"
+    },
+    {
+      "name": "hr-review-grok",
+      "pane": "wW:p2",
+      "provider": "cursor",
+      "model": "grok-4.7-high",
+      "resume_session": "a3f7e580-112a-426f-aa04-688cde4e750a",
+      "completion": "REBUILD_SYNC_HARDENED"
+    }
+  ],
+  "artifact": "dist/handrail-v1-alpha",
+  "archive_sha256": "f087efa8b5b9d0af66362ccea697671ed5aa82bdb98dbefd9f0f6ace3d636fa1",
+  "static_checks": {
+    "python_39_ast": "passed",
+    "internal_import_paths": "passed",
+    "current_document_links_missing": [],
+    "artifact_hash_mismatches": [],
+    "git_diff_check": "passed"
+  },
+  "runtime_validation": {
+    "full_suite": "not run",
+    "live_acceptance": "not run",
+    "worker_adapter_checks": "Grok ran isolated inline signature/behavior checks during initial adapter work; not full acceptance"
+  },
+  "source_files_sha256": {
+    "handrail/__init__.py": "a472d45870f4fa2dd5850180ee1e7da7c22098c53f7f2c48b696f5c237244e66",
+    "handrail/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "handrail/agentroom/__init__.py": "01ac68a0a419a4652adbea2ef5c51d8239f3c9362c681ff88fbc85141fd19fb7",
+    "handrail/agentroom/commands.py": "10909bf381142099dfb7d79d9e2e7939eafb38ce4d0ab2d6f48d3441295b9fc9",
+    "handrail/agentroom/identity.py": "5fb4f3758fee0a46d43d75bb9d76a48a93d88a715ccc7c4bc0b98699a3395c93",
+    "handrail/agentroom/service.py": "c9241571eb3a4a85edc3e8f9643dd6908c816acf4094aef98691be23d3f2b0ac",
+    "handrail/application.py": "372e49d79e04e89f25f790462048f9b2cca7dbd0e30c04ba74272292d14512c1",
+    "handrail/authorization/__init__.py": "a415d3f1f0a019724122e2e27619bda19456aed411eaf7b051fceed4a2406f57",
+    "handrail/authorization/service.py": "34004176a0b793f3d93267efbb6524da1ee397a6bc0d52b20ed835820524b25c",
+    "handrail/cli.py": "bd9df22c2b6838cf876e86386b1c5b07005fabcd4915a1226694a21e6e601bfd",
+    "handrail/hooks/__init__.py": "9f06c3c1f4504c2622ba7de938b89c9774074d97d3d2fde9e71aa68d1cd5fd88",
+    "handrail/hooks/board.py": "589e221ea6b04e9105934afce5d05eadf0c36d7f2860a4ca321c58e990d2b536",
+    "handrail/hooks/dispatcher.py": "50f9180d832ac4b1b642ed5823b6585d769eca3300ba7a0526eaef58e88e8133",
+    "handrail/interfaces/__init__.py": "b8fab9296274daf9d9de6113fbceb5dfac526af7de14bbbdda919addb19c1f32",
+    "handrail/interfaces/agentroom/__init__.py": "3429bfdabb81c62b89c7d607e89f4cef2ad26a5d0d506f33b74aa5ae6cde1e42",
+    "handrail/interfaces/agentroom/herdr.py": "e734aa85f1b32e89cdc78406060595228e1095547aa36ebab06c40df950c34c8",
+    "handrail/interfaces/git/__init__.py": "48bbf073c16857d0dd421eccef9dffbf859937f01b1d0b231f7b82b23b70ca48",
+    "handrail/interfaces/git/repository.py": "73a1b9d17395c631894e4b21a6f2c46f919128ef07c4951476cddb3120a9c670",
+    "handrail/interfaces/vikunja/__init__.py": "5f71594046b7e3184072787cf6dcc75c730a12504792bf9054204569df0d8dae",
+    "handrail/interfaces/vikunja/board.py": "438ced45f37e06c911c5d93c1e4d182b546723fde662749fe89caab0a9545faf",
+    "handrail/interfaces/vikunja/client.py": "fe9bcb82347e1142493f639e9f58a737f29cf0f7ef11d6f5f0729ce360b38ec3",
+    "handrail/setup/__init__.py": "de57c6dd0124bb565e5b5215ba1df62f289d1ef7d46ba20a85a3267405f066f4",
+    "handrail/setup/diagnostics.py": "02032b91e68811bfe0bec78fe7a54a262220d4e3da88f308bce44dcc23384499",
+    "handrail/setup/settings.py": "ea3af16017492d88d9ae84df4de441941a1ef0f1077cf252e49b4908a0155a25",
+    "handrail/shared/__init__.py": "15cebc03a60a44dbbd029daf9c5385b24ce6518c2358488b9f0c34cd7566cb76",
+    "handrail/shared/errors.py": "f7381018b9c25db6e3cb89930325cc9cce6dbf82517ab9858d7909416797f947",
+    "handrail/shared/identity.py": "059ccfa2b353b7deba0c16473e2e527ead06c96440707f79465405b43e9b3367",
+    "handrail/shared/store.py": "1e381e1315d49ffe845d77e738a8246e778633e11982c647cd2e9cdf013f41fe",
+    "handrail/workflow/__init__.py": "83c5c205224736ddacc695c5476858ee96439babddd5d13279aa7900758f9d6f",
+    "handrail/workflow/service.py": "6485f7df375489734f5b0534e46b891ee8ef0348bd4a84370d3f567a5a241cae",
+    "handrail/workflow/validation.py": "8aff698e73619ed00ab3a55983a813c536a35c9b956b351fac586e9f63090f1b"
+  }
+}

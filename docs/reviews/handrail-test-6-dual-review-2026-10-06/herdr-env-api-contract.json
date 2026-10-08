@@ -1,0 +1,317 @@
+{
+  "captured_at_utc": "2026-10-06T02:13:47.945825+00:00",
+  "source": "installed herdr api schema, client 0.9.1",
+  "protocol": 22,
+  "schema_sha256": "226d4ecbd128d2e6bc84e4c8ddcec21ba9c7e51a0aafffcf087111ead3f1fa9a",
+  "success_definitions": {
+    "AgentInfo": {
+      "properties": {
+        "agent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "agent_session": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/success_response/$defs/AgentSessionInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "agent_status": {
+          "$ref": "#/schemas/success_response/$defs/AgentStatus"
+        },
+        "cwd": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "display_agent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "focused": {
+          "type": "boolean"
+        },
+        "foreground_cwd": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "interactive_ready": {
+          "type": "boolean"
+        },
+        "launch_pending": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pane_id": {
+          "type": "string"
+        },
+        "revision": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "screen_detection_skipped": {
+          "type": "boolean"
+        },
+        "state_change_seq": {
+          "default": 0,
+          "format": "uint64",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "state_labels": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "tab_id": {
+          "type": "string"
+        },
+        "terminal_id": {
+          "type": "string"
+        },
+        "terminal_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "terminal_title_stripped": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tokens": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "maxProperties": 32,
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9_-]{1,32}$"
+          },
+          "type": "object"
+        },
+        "workspace_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "terminal_id",
+        "agent_status",
+        "workspace_id",
+        "tab_id",
+        "pane_id",
+        "focused",
+        "revision"
+      ],
+      "type": "object"
+    },
+    "AgentSessionInfo": {
+      "properties": {
+        "agent": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/schemas/success_response/$defs/AgentSessionRefKind"
+        },
+        "source": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "agent",
+        "kind",
+        "value"
+      ],
+      "type": "object"
+    },
+    "SessionSnapshot": {
+      "properties": {
+        "agents": {
+          "items": {
+            "$ref": "#/schemas/success_response/$defs/AgentInfo"
+          },
+          "type": "array"
+        },
+        "focused_pane_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "focused_tab_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "focused_workspace_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "layouts": {
+          "items": {
+            "$ref": "#/schemas/success_response/$defs/PaneLayoutSnapshot"
+          },
+          "type": "array"
+        },
+        "panes": {
+          "items": {
+            "$ref": "#/schemas/success_response/$defs/PaneInfo"
+          },
+          "type": "array"
+        },
+        "protocol": {
+          "format": "uint32",
+          "minimum": 0,
+          "type": "integer"
+        },
+        "tabs": {
+          "items": {
+            "$ref": "#/schemas/success_response/$defs/TabInfo"
+          },
+          "type": "array"
+        },
+        "version": {
+          "type": "string"
+        },
+        "workspaces": {
+          "items": {
+            "$ref": "#/schemas/success_response/$defs/WorkspaceInfo"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "version",
+        "protocol",
+        "workspaces",
+        "tabs",
+        "panes",
+        "layouts",
+        "agents"
+      ],
+      "type": "object"
+    }
+  },
+  "request_definitions": {
+    "AgentPromptParams": {
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "wait": {
+          "anyOf": [
+            {
+              "$ref": "#/schemas/request/$defs/AgentPromptWaitOptions"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "target",
+        "text"
+      ],
+      "type": "object"
+    },
+    "AgentPromptWaitOptions": {
+      "properties": {
+        "timeout_ms": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "until": {
+          "items": {
+            "$ref": "#/schemas/request/$defs/AgentStatus"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "AgentSendKeysParams": {
+      "properties": {
+        "keys": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "target": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "target",
+        "keys"
+      ],
+      "type": "object"
+    },
+    "AgentWaitParams": {
+      "properties": {
+        "target": {
+          "type": "string"
+        },
+        "timeout_ms": {
+          "format": "uint64",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "until": {
+          "items": {
+            "$ref": "#/schemas/request/$defs/AgentStatus"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "type": "object"
+    }
+  },
+  "note": "Selected schema definitions, not live runtime values. External refs retain their original schema paths. No expected provider-session/revision precondition is exposed in these command parameters."
+}

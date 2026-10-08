@@ -1,0 +1,30 @@
+{
+  "observed_at_utc": "2026-10-06 01:44:53 UTC",
+  "scope": "Read-only supplemental observation after both independent reviews; target workspace not changed.",
+  "id": "cli:workspace:list",
+  "result": {
+    "type": "workspace_list",
+    "workspaces": [
+      {
+        "active_tab_id": "wV:t4",
+        "agent_status": "idle",
+        "focused": false,
+        "label": "handrail_test_6 (23)",
+        "number": 1,
+        "pane_count": 2,
+        "tab_count": 2,
+        "workspace_id": "wV"
+      },
+      {
+        "active_tab_id": "wW:t1",
+        "agent_status": "idle",
+        "focused": true,
+        "label": "Handrail 개선 독립 분석 20261006",
+        "number": 2,
+        "pane_count": 2,
+        "tab_count": 2,
+        "workspace_id": "wW"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "handrail",
+  "version": "1.0.0-alpha.6+codex.20261008041952",
+  "description": "Coordinate Codex and Cursor workers with durable Handrail workflow, Vikunja boards and Git.",
+  "license": "MIT",
+  "skills": "./skills/"
+}

@@ -1,0 +1,51 @@
+{
+  "captured_at_utc": "2026-10-06T01:26:59.448329+00:00",
+  "sources": [
+    {
+      "task_id": 23,
+      "state": "done",
+      "comments": 47,
+      "captured_at": "2026-10-06T01:26:59+00:00"
+    },
+    {
+      "task_id": 24,
+      "state": "done",
+      "comments": 0,
+      "captured_at": "2026-10-06T01:27:00+00:00"
+    },
+    {
+      "task_id": 25,
+      "state": "done",
+      "comments": 0,
+      "captured_at": "2026-10-06T01:27:01+00:00"
+    },
+    {
+      "session_id": "01a10e66-2e0e-7580-8093-27b81f1ad1ce",
+      "rollout": "/home/dyhwang23/.codex/sessions/2026/10/06/rollout-2026-10-06T08-28-59-01a10e66-2e0e-7580-8093-27b81f1ad1ce.jsonl",
+      "lines": 133,
+      "end_utc": "2026-10-05T23:35:19.111Z",
+      "command_executions": 16,
+      "escalation_tool_calls": 0,
+      "note": "Request counts are not user approval click counts."
+    },
+    {
+      "session_id": "01a10e6c-fec8-7202-8315-20ee26179f43",
+      "rollout": "/home/dyhwang23/.codex/sessions/2026/10/06/rollout-2026-10-06T08-36-26-01a10e6c-fec8-7202-8315-20ee26179f43.jsonl",
+      "lines": 94,
+      "end_utc": "2026-10-05T23:38:31.981Z",
+      "command_executions": 8,
+      "escalation_tool_calls": 1,
+      "note": "Request counts are not user approval click counts."
+    },
+    {
+      "session_id": "01a10e6f-4986-7c83-8bf1-cccea315c958",
+      "rollout": "/home/dyhwang23/.codex/sessions/2026/10/06/rollout-2026-10-06T08-38-56-01a10e6f-4986-7c83-8bf1-cccea315c958.jsonl",
+      "lines": 2003,
+      "end_utc": "2026-10-06T01:24:25.645Z",
+      "command_executions": 291,
+      "escalation_tool_calls": 98,
+      "note": "Request counts are not user approval click counts."
+    }
+  ],
+  "scope": "Read-only source collection. No project, card, worker, or permission changes."
+}

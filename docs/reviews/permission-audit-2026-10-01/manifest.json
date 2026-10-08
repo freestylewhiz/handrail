@@ -1,0 +1,136 @@
+{
+  "captured_at_kst": "2026-10-01T17:00:50+09:00",
+  "project": "/project_workspace/hello_handrail_express",
+  "threads": [
+    {
+      "thread_id": "01a0f4b2-fc82-70c3-95b8-12b17967c140",
+      "rollout_file": "rollout-2026-10-01T08-42-45-01a0f4b2-fc82-70c3-95b8-12b17967c140.jsonl",
+      "sha256": "de1308fd958dde31bfc7d95a0f3fffca34d91faaf47af5992a1339febf03aca5",
+      "bytes": 86730,
+      "lines": 20,
+      "malformed_lines": 0,
+      "first_kst": "2026-10-01T08:42:46+09:00",
+      "last_kst": "2026-10-01T08:42:52+09:00",
+      "approval_mode_metadata": "on-request",
+      "cli_version": "0.157.1"
+    },
+    {
+      "thread_id": "01a0f4b4-c340-7f10-b23c-465cd4242532",
+      "rollout_file": "rollout-2026-10-01T08-44-42-01a0f4b4-c340-7f10-b23c-465cd4242532.jsonl",
+      "sha256": "6a766c85a5efc4705a9dec4ac6bbb39a20e5d048d0a52a5c7a4345debf5f5ee1",
+      "bytes": 187858,
+      "lines": 76,
+      "malformed_lines": 0,
+      "first_kst": "2026-10-01T08:44:42+09:00",
+      "last_kst": "2026-10-01T08:46:38+09:00",
+      "approval_mode_metadata": "on-request",
+      "cli_version": "0.157.1"
+    },
+    {
+      "thread_id": "01a0f4bd-1fe8-76f1-a01f-68ab877c06da",
+      "rollout_file": "rollout-2026-10-01T08-53-50-01a0f4bd-1fe8-76f1-a01f-68ab877c06da.jsonl",
+      "sha256": "234df6c7ff4717fa1f05611d6729653c48030467696128efe0c836410711a7ff",
+      "bytes": 14856290,
+      "lines": 1432,
+      "malformed_lines": 0,
+      "first_kst": "2026-10-01T08:53:50+09:00",
+      "last_kst": "2026-10-01T13:56:48+09:00",
+      "approval_mode_metadata": "on-request",
+      "cli_version": "0.157.1"
+    },
+    {
+      "thread_id": "01a0f511-14c8-7ba0-b84c-ebcf60bcb892",
+      "rollout_file": "rollout-2026-10-01T10-25-32-01a0f511-14c8-7ba0-b84c-ebcf60bcb892.jsonl",
+      "sha256": "3489370d6bd5e02c0742a726a1885ab2dd0d3a5b98a3118753e2c07cbf9089d0",
+      "bytes": 681033,
+      "lines": 182,
+      "malformed_lines": 0,
+      "first_kst": "2026-10-01T10:25:32+09:00",
+      "last_kst": "2026-10-01T10:34:52+09:00",
+      "approval_mode_metadata": "never",
+      "cli_version": "0.157.1"
+    },
+    {
+      "thread_id": "01a0f5d2-91cd-7910-8c3f-bd44643132f3",
+      "rollout_file": "rollout-2026-10-01T13-56-52-01a0f5d2-91cd-7910-8c3f-bd44643132f3.jsonl",
+      "sha256": "f2527911cb9889f4b0a7a83da8b0911784928e189f593ef24da7894dba6928ff",
+      "bytes": 8718391,
+      "lines": 1983,
+      "malformed_lines": 0,
+      "first_kst": "2026-10-01T13:57:22+09:00",
+      "last_kst": "2026-10-01T16:50:15+09:00",
+      "approval_mode_metadata": "on-request",
+      "cli_version": "0.157.1"
+    }
+  ],
+  "diagnostic_log_coverage": [
+    {
+      "thread_id": "01a0f4b2-fc82-70c3-95b8-12b17967c140",
+      "count": 36,
+      "first_kst": "2026-10-01T08:42:46+09:00",
+      "last_kst": "2026-10-01T08:43:59+09:00"
+    },
+    {
+      "thread_id": "01a0f4b4-c340-7f10-b23c-465cd4242532",
+      "count": 140,
+      "first_kst": "2026-10-01T08:44:42+09:00",
+      "last_kst": "2026-10-01T08:47:54+09:00"
+    },
+    {
+      "thread_id": "01a0f4bd-1fe8-76f1-a01f-68ab877c06da",
+      "count": 1000,
+      "first_kst": "2026-10-01T10:19:59+09:00",
+      "last_kst": "2026-10-01T13:56:48+09:00"
+    },
+    {
+      "thread_id": "01a0f511-14c8-7ba0-b84c-ebcf60bcb892",
+      "count": 0,
+      "first_kst": "",
+      "last_kst": ""
+    },
+    {
+      "thread_id": "01a0f5d2-91cd-7910-8c3f-bd44643132f3",
+      "count": 1000,
+      "first_kst": "2026-10-01T15:49:03+09:00",
+      "last_kst": "2026-10-01T16:50:14+09:00"
+    }
+  ],
+  "counts": {
+    "request_expressions": 176,
+    "decisions": 19,
+    "decision_types": {
+      "Approved": 9,
+      "ApprovedExecpolicyAmendment": 9,
+      "Abort": 1
+    },
+    "consent_requests": 7,
+    "consent_replies": 6,
+    "consent_reply_interval_seconds": 1468.1280000000002,
+    "command_execution_items": 500,
+    "current_matching_rules": 27,
+    "request_categories": {
+      "vikunja_management": 28,
+      "inline_program": 7,
+      "provider_session_network": 8,
+      "other": 12,
+      "verification": 18,
+      "git_write": 4,
+      "recovery_helper": 2,
+      "worker_launch": 13,
+      "status_process": 49,
+      "dependency_restore": 8,
+      "recovery": 3,
+      "review_record": 4,
+      "local_integration": 3,
+      "card_sync": 4,
+      "git_read": 13
+    }
+  },
+  "unparsed_escalated_calls": [],
+  "collection_notes": [
+    "Read-only target sessions; raw logs and secrets not copied.",
+    "Requests are static nested call expressions, not approval clicks; loops may invoke multiple commands.",
+    "Diagnostic log retention does not cover full session.",
+    "Timestamps in response_item refer to message persistence; intervals are not measured user interaction duration."
+  ]
+}

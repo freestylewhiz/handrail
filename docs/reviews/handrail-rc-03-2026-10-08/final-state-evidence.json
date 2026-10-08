@@ -1,0 +1,389 @@
+{
+  "observed_at": "2026-10-08T06:17:49.976891+00:00",
+  "source": "/home/dyhwang23/.local/share/handrail/v1/projects/b5b251bfb0bd864df14427f9/state.sqlite3",
+  "documents": [
+    {
+      "kind": "plan",
+      "id": "plan-ddf1e9975118436d87e5f65f84c5b982",
+      "state": "done",
+      "revision": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+      "updated_at": "2026-10-08T06:10:39.995220+00:00",
+      "verified": true
+    },
+    {
+      "kind": "work",
+      "id": "work-427a966be27b42fa98a7f20a2ec2278d",
+      "state": "done",
+      "revision": "d209dc030e681806918d8bafac9e7c743048bfc4",
+      "updated_at": "2026-10-08T05:34:45.075465+00:00",
+      "verified": true
+    },
+    {
+      "kind": "work",
+      "id": "work-30b88b8bd8f04220a0ae214b1162b6a1",
+      "state": "done",
+      "revision": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+      "updated_at": "2026-10-08T06:05:17.837852+00:00",
+      "verified": true
+    }
+  ],
+  "checks": [
+    {
+      "id": "rc03-final-api-01",
+      "action": "command.run",
+      "status": "complete",
+      "result": {
+        "exit_code": 0,
+        "clean_after": true,
+        "revision_before": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "revision_after": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "finished_at": "2026-10-08T06:04:37.328848+00:00",
+        "log": "/home/dyhwang23/.local/share/handrail/v1/projects/b5b251bfb0bd864df14427f9/commands/c724df7851ae3e481183e04920373bb89f459c65d946b6a4819c0a7b115f781c.log"
+      },
+      "log_sha256": "96658f7c537f605e5d198e9f0161c6f2641d1ff48c6400da17eee39e0939a36e",
+      "log_tail": "bun test v1.3.13 (bf2e2cec)\n\ntests/api.test.js:\n(pass) cookie serializer sets Secure only for HTTPS [1.00ms]\n(pass) setup once, then conflict, and invalid setup does not create a file [177.02ms]\n(pass) concurrent setup creates one admin [170.02ms]\n(pass) login, logout, me, and session expiry [689.06ms]\n(pass) account authorization and separate employee emails [515.05ms]\n(pass) employee CRUD and anonymous or user denial [435.04ms]\n(pass) concurrent employee creates keep one email [139.01ms]\n(pass) rejects cross-origin JSON mutations, bad bodies, and oversized payloads [154.01ms]\n(pass) data survives a restart [351.03ms]\n(pass) malformed storage fails closed and keeps the bytes [10.00ms]\n(pass) a symlinked state file is not followed or replaced [11.00ms]\n(pass) static files stay inside public [11.00ms]\n(pass) entrypoint listens on HOST and PORT and reads DATA_DIR [52.00ms]\n(pass) HTTPS responses mark the session cookie Secure [196.02ms]\n(pass) bodyless logout and delete reject a hostile origin and storage stays private [278.02ms]\n(pass) invalid ports are rejected before listen\n\n 16 pass\n 0 fail\n 251 expect() calls\nRan 16 tests across 1 file. [3.23s]\n"
+    },
+    {
+      "id": "rc03-final-browser-01",
+      "action": "command.run",
+      "status": "complete",
+      "result": {
+        "exit_code": 0,
+        "clean_after": true,
+        "revision_before": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "revision_after": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "finished_at": "2026-10-08T06:04:49.385193+00:00",
+        "log": "/home/dyhwang23/.local/share/handrail/v1/projects/b5b251bfb0bd864df14427f9/commands/a9e8b35589fdbd72c9fdc79ac380376cadb637a2e481bf0f2a686d1ba46cddd9.log"
+      },
+      "log_sha256": "167d6744495e24bbbbce5163e66bc82d4c652b5428edc5ab587a8c1ebbcd5d53",
+      "log_tail": "{\n  \"status\": \"passed\",\n  \"checks\": [\n    \"first administrator setup and automatic login\",\n    \"employee create and list\",\n    \"search, detail and update\",\n    \"administrator creates user and additional administrator accounts\",\n    \"authenticated reload\",\n    \"invalid login, regular-user login, read-only UI and server authorization\",\n    \"mobile viewport without page overflow\",\n    \"delete cancellation and confirmed deletion\",\n    \"no uncaught browser errors\"\n  ],\n  \"dataDir\": \"/tmp/rc03-e2e-zqxse2\",\n  \"screenshots\": [\n    \"/tmp/rc03-desktop.png\",\n    \"/tmp/rc03-mobile.png\"\n  ]\n}\n"
+    },
+    {
+      "id": "rc03-final-storage-01",
+      "action": "command.run",
+      "status": "complete",
+      "result": {
+        "exit_code": 0,
+        "clean_after": true,
+        "revision_before": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "revision_after": "51dda4ce4ec485c2eebf900d59478c9134ab8684",
+        "finished_at": "2026-10-08T06:04:50.369019+00:00",
+        "log": "/home/dyhwang23/.local/share/handrail/v1/projects/b5b251bfb0bd864df14427f9/commands/2b96a044fc4bf96511c3cc7e6b8e4f63eae5fddb41bd29b79b146cf6530e77d1.log"
+      },
+      "log_sha256": "7654e9444e6d8444e8b79cb088396405d6c6d4579ca243d7f5786d6a3c3212ed",
+      "log_tail": "118 |       }\n119 |     }\n120 |     const tmp = path.join(realRoot, `.state.${crypto.randomUUID()}.tmp`);\n121 |     let handle;\n122 |     try {\n123 |       handle = await open(tmp, 'wx', 0o600);\n                           ^\nEACCES: permission denied, open '/tmp/rc03-write-failure-rDntmQ/.state.50175838-8d27-4ba4-820d-42b63d2ea38b.tmp'\n    path: \"/tmp/rc03-write-failure-rDntmQ/.state.50175838-8d27-4ba4-820d-42b63d2ea38b.tmp\",\n syscall: \"open\",\n   errno: -13,\n    code: \"EACCES\"\n\n      at async <anonymous> (node:fs/promises:102:56)\n      at async saveState (/project_workspace/handrail_poc/handrail_rc_03/server/store.js:123:22)\n      at async <anonymous> (/project_workspace/handrail_poc/handrail_rc_03/server/store.js:159:36)\n      at async postEmployee (/project_workspace/handrail_poc/handrail_rc_03/server/http.js:352:35)\n      at async <anonymous> (/project_workspace/handrail_poc/handrail_rc_03/server/http.js:516:20)\n\nPASS: JSON mode 0600; non-root write failure returns 500 and preserves previous bytes.\n"
+    }
+  ],
+  "events": [
+    {
+      "sequence": 85,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:50:59.724044+00:00"
+    },
+    {
+      "sequence": 86,
+      "kind": "worker.prompt.failed",
+      "at": "2026-10-08T05:51:40.696366+00:00"
+    },
+    {
+      "sequence": 87,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:51:57.450922+00:00"
+    },
+    {
+      "sequence": 88,
+      "kind": "permission.granted",
+      "at": "2026-10-08T05:51:57.989731+00:00"
+    },
+    {
+      "sequence": 89,
+      "kind": "message.reconciled",
+      "at": "2026-10-08T05:52:18.516556+00:00"
+    },
+    {
+      "sequence": 90,
+      "kind": "message.submitted",
+      "at": "2026-10-08T05:52:19.794746+00:00"
+    },
+    {
+      "sequence": 91,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:52:51.996301+00:00"
+    },
+    {
+      "sequence": 92,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:52:52.294645+00:00"
+    },
+    {
+      "sequence": 93,
+      "kind": "permission.granted",
+      "at": "2026-10-08T05:53:50.933162+00:00"
+    },
+    {
+      "sequence": 94,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:56:07.717636+00:00"
+    },
+    {
+      "sequence": 95,
+      "kind": "instruction.checked",
+      "at": "2026-10-08T05:56:08.326098+00:00"
+    },
+    {
+      "sequence": 96,
+      "kind": "message.submitted",
+      "at": "2026-10-08T05:56:09.356094+00:00"
+    },
+    {
+      "sequence": 97,
+      "kind": "worker.ready",
+      "at": "2026-10-08T05:56:09.358764+00:00"
+    },
+    {
+      "sequence": 98,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:56:09.361119+00:00"
+    },
+    {
+      "sequence": 99,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:56:40.707015+00:00"
+    },
+    {
+      "sequence": 100,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:56:40.711463+00:00"
+    },
+    {
+      "sequence": 101,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:57:22.711548+00:00"
+    },
+    {
+      "sequence": 102,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:57:22.716483+00:00"
+    },
+    {
+      "sequence": 103,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:58:27.769433+00:00"
+    },
+    {
+      "sequence": 104,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:58:27.772708+00:00"
+    },
+    {
+      "sequence": 105,
+      "kind": "worker.observed",
+      "at": "2026-10-08T05:59:15.438203+00:00"
+    },
+    {
+      "sequence": 106,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T05:59:15.441752+00:00"
+    },
+    {
+      "sequence": 107,
+      "kind": "worker.observed",
+      "at": "2026-10-08T06:00:09.817922+00:00"
+    },
+    {
+      "sequence": 108,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T06:00:09.821655+00:00"
+    },
+    {
+      "sequence": 109,
+      "kind": "worker.observed",
+      "at": "2026-10-08T06:01:06.658603+00:00"
+    },
+    {
+      "sequence": 110,
+      "kind": "work_submitted",
+      "at": "2026-10-08T06:01:06.883163+00:00"
+    },
+    {
+      "sequence": 111,
+      "kind": "instruction.checked",
+      "at": "2026-10-08T06:01:16.306206+00:00"
+    },
+    {
+      "sequence": 112,
+      "kind": "work_reviewed",
+      "at": "2026-10-08T06:01:16.415945+00:00"
+    },
+    {
+      "sequence": 113,
+      "kind": "message.submitted",
+      "at": "2026-10-08T06:01:17.663335+00:00"
+    },
+    {
+      "sequence": 114,
+      "kind": "worker.observed",
+      "at": "2026-10-08T06:02:10.638172+00:00"
+    },
+    {
+      "sequence": 115,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T06:02:10.643286+00:00"
+    },
+    {
+      "sequence": 116,
+      "kind": "worker.observed",
+      "at": "2026-10-08T06:03:06.828087+00:00"
+    },
+    {
+      "sequence": 117,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T06:03:06.832435+00:00"
+    },
+    {
+      "sequence": 118,
+      "kind": "worker.observed",
+      "at": "2026-10-08T06:03:54.948660+00:00"
+    },
+    {
+      "sequence": 119,
+      "kind": "work_submitted",
+      "at": "2026-10-08T06:03:55.359685+00:00"
+    },
+    {
+      "sequence": 120,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T06:03:55.362744+00:00"
+    },
+    {
+      "sequence": 121,
+      "kind": "instruction.checked",
+      "at": "2026-10-08T06:04:10.916081+00:00"
+    },
+    {
+      "sequence": 122,
+      "kind": "work_reviewed",
+      "at": "2026-10-08T06:04:11.007187+00:00"
+    },
+    {
+      "sequence": 123,
+      "kind": "work_integrated",
+      "at": "2026-10-08T06:04:11.860764+00:00"
+    },
+    {
+      "sequence": 124,
+      "kind": "command.finished",
+      "at": "2026-10-08T06:04:37.330669+00:00"
+    },
+    {
+      "sequence": 125,
+      "kind": "command.finished",
+      "at": "2026-10-08T06:04:49.386644+00:00"
+    },
+    {
+      "sequence": 126,
+      "kind": "command.finished",
+      "at": "2026-10-08T06:04:50.371256+00:00"
+    },
+    {
+      "sequence": 127,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:15.583259+00:00"
+    },
+    {
+      "sequence": 128,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:15.909256+00:00"
+    },
+    {
+      "sequence": 129,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:16.571628+00:00"
+    },
+    {
+      "sequence": 130,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:16.912933+00:00"
+    },
+    {
+      "sequence": 131,
+      "kind": "work_completed",
+      "at": "2026-10-08T06:05:17.839248+00:00"
+    },
+    {
+      "sequence": 132,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:34.328261+00:00"
+    },
+    {
+      "sequence": 133,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:34.676001+00:00"
+    },
+    {
+      "sequence": 134,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:34.992022+00:00"
+    },
+    {
+      "sequence": 135,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:35.578596+00:00"
+    },
+    {
+      "sequence": 136,
+      "kind": "evidence_recorded",
+      "at": "2026-10-08T06:05:35.896725+00:00"
+    },
+    {
+      "sequence": 137,
+      "kind": "coordinator.checked",
+      "at": "2026-10-08T06:05:36.470038+00:00"
+    },
+    {
+      "sequence": 138,
+      "kind": "plan_verified",
+      "at": "2026-10-08T06:05:39.781795+00:00"
+    },
+    {
+      "sequence": 139,
+      "kind": "instruction.checked",
+      "at": "2026-10-08T06:05:40.361628+00:00"
+    },
+    {
+      "sequence": 140,
+      "kind": "plan_submitted",
+      "at": "2026-10-08T06:05:40.423146+00:00"
+    },
+    {
+      "sequence": 141,
+      "kind": "summary.published",
+      "at": "2026-10-08T06:06:40.793059+00:00"
+    },
+    {
+      "sequence": 142,
+      "kind": "plan.user_reported",
+      "at": "2026-10-08T06:06:59.586066+00:00"
+    },
+    {
+      "sequence": 143,
+      "kind": "plan_accepted",
+      "at": "2026-10-08T06:10:39.999146+00:00"
+    },
+    {
+      "sequence": 144,
+      "kind": "summary.published",
+      "at": "2026-10-08T06:10:41.003304+00:00"
+    },
+    {
+      "sequence": 145,
+      "kind": "summary.published",
+      "at": "2026-10-08T06:11:21.634414+00:00"
+    },
+    {
+      "sequence": 146,
+      "kind": "cleanup.choice_recorded",
+      "at": "2026-10-08T06:11:35.547958+00:00"
+    }
+  ]
+}

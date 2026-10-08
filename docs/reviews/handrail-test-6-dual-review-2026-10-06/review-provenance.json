@@ -1,0 +1,71 @@
+{
+  "requested_by_user": true,
+  "transport": "Herdr interactive CLI",
+  "workspace_id": "wW",
+  "workspace_label": "Handrail 개선 독립 분석 20261006",
+  "scope": "Read-only independent analysis; separate from the target implementation workflow. Not a Handrail-managed implementation run.",
+  "reviewers": [
+    {
+      "provider": "codex",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-astra",
+      "pane_id": "wW:p1",
+      "provider_session_id": "01a10ed6-5786-72e1-b7dd-d419e7731887",
+      "sandbox": "read-only",
+      "approval_policy": "never",
+      "model_verified": "Launch argv and visible GPT-6-Astra high indicator",
+      "status": "idle",
+      "completion_marker": "REVIEW_COMPLETE_ASTRA",
+      "report": "codex-astra-review.md"
+    },
+    {
+      "provider": "cursor",
+      "model": "grok-4.7-high",
+      "reasoning_effort": "high",
+      "agent_name": "hr-review-grok",
+      "pane_id": "wW:p2",
+      "provider_session_id": "a3f7e580-112a-426f-aa04-688cde4e750a",
+      "mode": "ask",
+      "sandbox": "enabled",
+      "model_verified": "Launch argv and visible Grok 4.7 256K High indicator",
+      "status": "idle",
+      "completion_marker": "REVIEW_COMPLETE_GROK",
+      "report": "cursor-grok-review.md"
+    }
+  ],
+  "evidence_hashes": {
+    "01a10e66-commands.jsonl": "b446d5f350558ad64a722e62962d7d8fae011ebcf1f9058bd2365736f63d82b5",
+    "01a10e66-contexts.jsonl": "1d0683636032370a670d87d448ab7b8e694f27d210db74a05f1b87134214720e",
+    "01a10e66-conversation.jsonl": "2b0381883a9a9f4cd1ee4ab608eb3da75738b5340c72970cc8cf8bab5d328bcd",
+    "01a10e66-escalation-requests.jsonl": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "01a10e6c-commands.jsonl": "e53f0ffb8c68c00b1d1b27c82df965e4261e9b3d8620b6b428a2f7e6fdcb42f9",
+    "01a10e6c-contexts.jsonl": "ccfa2ec20b8378f36eecd4ff5e2fb41b78ae2721200a0fdda046b5ef99669e3a",
+    "01a10e6c-conversation.jsonl": "27669ffefa9fc47bb9d585567669f87eda71da969714bff3692835d00830fff7",
+    "01a10e6c-escalation-requests.jsonl": "cd09a35ad5f72e53018c62efa73a8a0a0b4a12b5e123984819978714b4a32ba9",
+    "01a10e6f-commands.jsonl": "12692fa1c58bc602de4108bdf054bd545c23bb7edf3b1504ef187ebdf24bbafb",
+    "01a10e6f-contexts.jsonl": "e755e97591f354c804492ad22c28512efd355e14516442a5067b9eddd46c6c50",
+    "01a10e6f-conversation.jsonl": "c8537ab8653484c0af64cd8cb1046c9b81b1ed4a6b93440df01c5ee48a2ee8d0",
+    "01a10e6f-escalation-requests.jsonl": "41157b3a0fbffea0ff6838ca00f07362710dd66066420f7c5e002edbaeb3355f",
+    "checks-plan-23.json": "67b732b41a4457ae514e4cc16cf2960db0a4d39657fdceb778009586797a0344",
+    "checks-task-24.json": "24e71b8c3e9ec8a4bd542bf81b7ad54df0c09ba683fdda829d3cebdcbcd4b49a",
+    "checks-task-25.json": "4482a4ddf6f6b54a1e0645cd2bb0ab7abaf029b1003b821050f81943acbdd10c",
+    "herdr-state.json": "b8dcb675f612f6942159ff797719c0dc35526190eb0e2fdf13cfef43b1813044",
+    "kanban-task-23.json": "eb6c834c4d1f74412b554e8b778e5b71fe4c3444fb497250b733ce9607e8a3d2",
+    "kanban-task-24.json": "8714fdb7536181b28561f21da740b8ba69d3b7c358994649d2b14a8a10954279",
+    "kanban-task-25.json": "f2758efceef07a59e8c2d124e033fed4884abb3b36e0fa4c1169371bf6e2fea7",
+    "manifest.json": "2093aec4c4f05d8debb0dac70ccd5fefaaaf856b3ff1105345778203f0cfbedf"
+  },
+  "recorded_at_utc": "2026-10-06T01:33:07.930011+00:00",
+  "external_control_note": "Current orchestrator has no HERDR_ENV. User explicitly requested Herdr delegation; analysis uses a new workspace and explicit identifiers. No caller context variables were fabricated.",
+  "status": "complete",
+  "collected_at_utc": "2026-10-06T01:45:07.288752+00:00",
+  "report_hashes": {
+    "codex-astra-review.md": "1c895d6504c16c4be91f21895391d54394faa01d9555db13b35689f9e7bf7dbc",
+    "cursor-grok-review.md": "71f1bb8dafa3750ae38dafb642c72c26a2abcc32421c828713b1e354a064f016",
+    "report.md": "0e36f21afa567cae829e4686d3c9172944d81c82a7819c57fa53f60862089e1d",
+    "permissions-detail.md": "16e18ec3b5390398f28e9d744add8137aef7f382d5f6db08f5727dca6a29d0df",
+    "workspace-observation.json": "eb753ae1d1f0ef50d5240a7032a11f84487db6eededd05debfcc65a3e71da8c4"
+  },
+  "reconciliation": "Independent reports preserved verbatim apart from terminal indentation/footer. Consolidated report adjudicates differences and labels unobserved code risks."
+}

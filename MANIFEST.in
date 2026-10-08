@@ -1,0 +1,3 @@
+include install.sh
+recursive-include plugins/handrail *.md *.json *.py
+recursive-include scripts *.py

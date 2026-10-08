@@ -1,0 +1,16 @@
+[
+  {
+    "check_id": "backend_syntax",
+    "kind": "command",
+    "argv": ["node", "--check", "backend/app.js"],
+    "working_directory": ".",
+    "pass_condition": "Node exits successfully after parsing the backend entry point."
+  },
+  {
+    "check_id": "frontend_build",
+    "kind": "command",
+    "argv": ["npm", "--prefix", "frontend", "run", "build"],
+    "working_directory": ".",
+    "pass_condition": "The frontend production build completes successfully."
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "name": "handrail",
+  "interface": {
+    "displayName": "Handrail"
+  },
+  "plugins": [
+    {
+      "name": "handrail",
+      "source": {
+        "source": "local",
+        "path": "./plugins/handrail"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

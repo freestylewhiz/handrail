@@ -1,0 +1,2717 @@
+{
+  "scenario": "cycle2 cleanup/rebind/review/clear/parallel corrections",
+  "plan": {
+    "task_id": 17,
+    "identity": {
+      "instance_id": "91c4252a9ddd4004b0ea743992e2070a",
+      "project_id": 13,
+      "task_id": 17
+    },
+    "role": "plan",
+    "revision": 7,
+    "required_work": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "submissions": [
+      {
+        "submission_id": "837f4873d2934752a4439b637e2d70e9",
+        "plan_revision": 3,
+        "required_work": [
+          18,
+          19
+        ],
+        "evidence": {
+          "plan_id": 17,
+          "plan_revision": 3,
+          "required_work": [
+            18,
+            19
+          ],
+          "work": [
+            {
+              "task_id": 18,
+              "title": "backend employee CRUD 구현",
+              "run_id": "herdr-18-7581da2fe24c",
+              "evidence": {
+                "integrated_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+                "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+                "head": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+                "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+                "checks": [
+                  {
+                    "check_id": "api-crud",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m4.288 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m134.697 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.938 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.888 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.684 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.461 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.271 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.459 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.241 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m2.465 ms - 176\u001b[0m\n✔ employee CRUD, validation, and missing records (240.261874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 405.075172\n"
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:42:24+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+                  "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+                  "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+                  "reviewed_at": "2026-10-02T08:42:20+00:00"
+                },
+                "manual_evidence": "Backend inspected and integrated. Rerun approved API checks."
+              }
+            },
+            {
+              "task_id": 19,
+              "title": "frontend employee CRUD 구현",
+              "run_id": "herdr-19-3c76c2586cac",
+              "evidence": {
+                "integrated_commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+                "base_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+                "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+                "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+                "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+                "checks": [
+                  {
+                    "check_id": "frontend-syntax",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": ""
+                  },
+                  {
+                    "check_id": "ui-browser",
+                    "status": "passed",
+                    "evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:44:13+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+                  "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+                  "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+                  "reviewed_at": "2026-10-02T08:43:41+00:00"
+                },
+                "manual_evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+              }
+            }
+          ],
+          "spec_sha256": "425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234",
+          "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+          "approval_hash": "970cdb17cd819c6858c264a5cbabd8d7c37fcc90fd425f2e802986f2602b7532",
+          "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+          "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "checks": [
+            {
+              "check_id": "api-crud",
+              "kind": "command",
+              "status": "passed",
+              "exit_code": 0,
+              "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.294 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m6.732 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.558 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.507 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.438 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.264 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.175 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.305 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.117 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.606 ms - 1050\u001b[0m\n✔ employee CRUD, validation, and missing records (81.839165ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 264.075728\n",
+              "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+              "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "at": "2026-10-02T08:44:53+00:00"
+            }
+          ],
+          "review_guidance": [
+            {
+              "check_id": "api-crud",
+              "criterion": "CRUD validation and missing records pass"
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:44:53+00:00"
+        },
+        "summary": "Handrail plan revision 3 submitted for user review.\nRequired work: 18, 19.\nIntegrated HEAD: bf8a794564aa29267ae1edac9f4a298e7ebdf63a\nFingerprint: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nSpecification: 425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234\nChecks: api-crud (all passed).\n\nCompleted work:\n- Task 18: backend employee CRUD 구현 (run herdr-18-7581da2fe24c)\n- Task 19: frontend employee CRUD 구현 (run herdr-19-3c76c2586cac)\n\nUser review criteria:\n- api-crud: CRUD validation and missing records pass\n\nPlease inspect the integrated result against these criteria. Accept this plan after review, or request new child work for corrections.",
+        "status": "submitted",
+        "comment_operation_id": "ad16b84f1f12b146a9099307ba9c7426",
+        "move_operation_id": "8a673975710fd61fa812efa44e2bce44",
+        "prepared_at": "2026-10-02T08:45:49+00:00",
+        "move": {
+          "task_id": 17,
+          "state": "review",
+          "operation_id": "8a673975710fd61fa812efa44e2bce44",
+          "external_status": "in_sync"
+        },
+        "submitted_at": "2026-10-02T08:45:50+00:00"
+      },
+      {
+        "submission_id": "b73067aab6f147358ae546180f8a9adb",
+        "plan_revision": 7,
+        "required_work": [
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "evidence": {
+          "plan_id": 17,
+          "plan_revision": 7,
+          "required_work": [
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          "work": [
+            {
+              "task_id": 18,
+              "title": "backend employee CRUD 구현",
+              "run_id": "herdr-18-7581da2fe24c",
+              "evidence": {
+                "integrated_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+                "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+                "head": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+                "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+                "checks": [
+                  {
+                    "check_id": "api-crud",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m4.288 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m134.697 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.938 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.888 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.684 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.461 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.271 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.459 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.241 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m2.465 ms - 176\u001b[0m\n✔ employee CRUD, validation, and missing records (240.261874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 405.075172\n"
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:42:24+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+                  "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+                  "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+                  "reviewed_at": "2026-10-02T08:42:20+00:00"
+                },
+                "manual_evidence": "Backend inspected and integrated. Rerun approved API checks."
+              }
+            },
+            {
+              "task_id": 19,
+              "title": "frontend employee CRUD 구현",
+              "run_id": "herdr-19-3c76c2586cac",
+              "evidence": {
+                "integrated_commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+                "base_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+                "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+                "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+                "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+                "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+                "checks": [
+                  {
+                    "check_id": "frontend-syntax",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": ""
+                  },
+                  {
+                    "check_id": "ui-browser",
+                    "status": "passed",
+                    "evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:44:13+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+                  "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+                  "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+                  "reviewed_at": "2026-10-02T08:43:41+00:00"
+                },
+                "manual_evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+              }
+            },
+            {
+              "task_id": 20,
+              "title": "리뷰 수정: backend",
+              "run_id": "herdr-20-53c28f5ba0a2",
+              "evidence": {
+                "integrated_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+                "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+                "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+                "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+                "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "a7f9dd7e0ec5ea0ada936b4527b7d24c0050a89d6030247eb1d5a3b8b3649880",
+                "checks_sha256": "a917d6fb8c6e7da348447cc039e221ad3c7f8f5a1d8f6391e42cf10585ed0154",
+                "checks": [
+                  {
+                    "check_id": "api-crud",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.915 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m7.838 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.620 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.577 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.475 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.287 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.180 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.307 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.140 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.839 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (119.731208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 613.146386\n"
+                  },
+                  {
+                    "check_id": "email-normalization",
+                    "status": "passed",
+                    "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:50:23+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.",
+                  "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+                  "tree": "4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071",
+                  "reviewed_at": "2026-10-02T08:48:53+00:00"
+                },
+                "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            },
+            {
+              "task_id": 21,
+              "title": "리뷰 수정: frontend",
+              "run_id": "herdr-21-a5cb065618aa",
+              "evidence": {
+                "integrated_commit": "c10cb3eb58caacb06f0232d7952d686df4807a68",
+                "base_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+                "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+                "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+                "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "68313a1277e320898166539d5fed00b38782007fc27afb2a5537bf2079906089",
+                "checks_sha256": "203a33ae5e484d395c8d19bc0a87b873ec3f82f41e40667a061d4339706b923d",
+                "checks": [
+                  {
+                    "check_id": "frontend-syntax",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": ""
+                  },
+                  {
+                    "check_id": "refresh-browser",
+                    "status": "passed",
+                    "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:50:26+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.",
+                  "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+                  "tree": "825c07efa60c5d2bd3a36f98d2062405ede97e0f",
+                  "reviewed_at": "2026-10-02T08:48:55+00:00"
+                },
+                "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            },
+            {
+              "task_id": 22,
+              "title": "검증 마무리: 실행 안내 문서",
+              "run_id": "herdr-22-cce865588ec5",
+              "evidence": {
+                "integrated_commit": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+                "base_commit": "df2df23974656ce1b826a4bf53b672063bab890c",
+                "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+                "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+                "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+                "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "spec_sha256": "b5b0db64f436138e94fea36d47476d28936ac38b13fcd4d7270ef9d794857ff4",
+                "checks_sha256": "6370f45253b992aa144152dd7c146a65a8a5d9108aedb896edfbf9a0ce18e3d1",
+                "checks": [
+                  {
+                    "check_id": "run-guide",
+                    "status": "passed",
+                    "exit_code": 0,
+                    "output": ""
+                  }
+                ],
+                "verified": true,
+                "checked_at": "2026-10-02T08:51:20+00:00",
+                "review": {
+                  "decision": "accept",
+                  "notes": "README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.",
+                  "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+                  "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+                  "reviewed_at": "2026-10-02T08:51:16+00:00"
+                },
+                "manual_evidence": "README contents inspected against implemented application."
+              }
+            }
+          ],
+          "spec_sha256": "425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234",
+          "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+          "approval_hash": "970cdb17cd819c6858c264a5cbabd8d7c37fcc90fd425f2e802986f2602b7532",
+          "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+          "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "checks": [
+            {
+              "check_id": "api-crud",
+              "kind": "command",
+              "status": "passed",
+              "exit_code": 0,
+              "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.495 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m6.348 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.612 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.541 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.479 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.293 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.197 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.328 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.131 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.659 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (81.248254ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 267.314002\n",
+              "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+              "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "at": "2026-10-02T08:51:22+00:00"
+            }
+          ],
+          "review_guidance": [
+            {
+              "check_id": "api-crud",
+              "criterion": "CRUD validation and missing records pass"
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:51:22+00:00"
+        },
+        "summary": "Handrail plan revision 7 submitted for user review.\nRequired work: 18, 19, 20, 21, 22.\nIntegrated HEAD: d9ccf267113930b181c4cbc43e46177affd41c7a\nFingerprint: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nSpecification: 425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234\nChecks: api-crud (all passed).\n\nCompleted work:\n- Task 18: backend employee CRUD 구현 (run herdr-18-7581da2fe24c)\n- Task 19: frontend employee CRUD 구현 (run herdr-19-3c76c2586cac)\n- Task 20: 리뷰 수정: backend (run herdr-20-53c28f5ba0a2)\n- Task 21: 리뷰 수정: frontend (run herdr-21-a5cb065618aa)\n- Task 22: 검증 마무리: 실행 안내 문서 (run herdr-22-cce865588ec5)\n\nUser review criteria:\n- api-crud: CRUD validation and missing records pass\n\nPlease inspect the integrated result against these criteria. Accept this plan after review, or request new child work for corrections.",
+        "status": "submitted",
+        "comment_operation_id": "5db0654dfaf15b870a04005954ebf72d",
+        "move_operation_id": "6fce2d9628445982e6012510e64f0694",
+        "prepared_at": "2026-10-02T08:51:25+00:00",
+        "move": {
+          "task_id": 17,
+          "state": "review",
+          "operation_id": "6fce2d9628445982e6012510e64f0694",
+          "external_status": "in_sync"
+        },
+        "submitted_at": "2026-10-02T08:51:26+00:00"
+      }
+    ],
+    "history": [
+      {
+        "event": "review_submission_prepared",
+        "submission_id": "837f4873d2934752a4439b637e2d70e9",
+        "at": "2026-10-02T08:45:49+00:00"
+      },
+      {
+        "event": "review_submitted",
+        "submission_id": "837f4873d2934752a4439b637e2d70e9",
+        "at": "2026-10-02T08:45:50+00:00"
+      },
+      {
+        "event": "reopened",
+        "from_revision": 3,
+        "reason": "Simulated second review: normalize employee email lowercase and add a refresh button to the list. Clear old space using persisted project policy.",
+        "operation_id": "4d39dee4cf78435ca830dbf8be415366",
+        "at": "2026-10-02T08:45:51+00:00"
+      },
+      {
+        "event": "review_submission_prepared",
+        "submission_id": "b73067aab6f147358ae546180f8a9adb",
+        "at": "2026-10-02T08:51:25+00:00"
+      },
+      {
+        "event": "review_submitted",
+        "submission_id": "b73067aab6f147358ae546180f8a9adb",
+        "at": "2026-10-02T08:51:26+00:00"
+      }
+    ],
+    "aggregate_verification": {
+      "plan_id": 17,
+      "plan_revision": 7,
+      "required_work": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "work": [
+        {
+          "task_id": 18,
+          "title": "backend employee CRUD 구현",
+          "run_id": "herdr-18-7581da2fe24c",
+          "evidence": {
+            "integrated_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+            "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+            "head": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+            "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+            "checks": [
+              {
+                "check_id": "api-crud",
+                "status": "passed",
+                "exit_code": 0,
+                "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m4.288 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m134.697 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.938 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.888 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.684 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.461 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.271 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.459 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.241 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m2.465 ms - 176\u001b[0m\n✔ employee CRUD, validation, and missing records (240.261874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 405.075172\n"
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:42:24+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+              "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+              "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+              "reviewed_at": "2026-10-02T08:42:20+00:00"
+            },
+            "manual_evidence": "Backend inspected and integrated. Rerun approved API checks."
+          }
+        },
+        {
+          "task_id": 19,
+          "title": "frontend employee CRUD 구현",
+          "run_id": "herdr-19-3c76c2586cac",
+          "evidence": {
+            "integrated_commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+            "base_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+            "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+            "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+            "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+            "checks": [
+              {
+                "check_id": "frontend-syntax",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              },
+              {
+                "check_id": "ui-browser",
+                "status": "passed",
+                "evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:44:13+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+              "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+              "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+              "reviewed_at": "2026-10-02T08:43:41+00:00"
+            },
+            "manual_evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+          }
+        },
+        {
+          "task_id": 20,
+          "title": "리뷰 수정: backend",
+          "run_id": "herdr-20-53c28f5ba0a2",
+          "evidence": {
+            "integrated_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+            "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+            "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+            "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "a7f9dd7e0ec5ea0ada936b4527b7d24c0050a89d6030247eb1d5a3b8b3649880",
+            "checks_sha256": "a917d6fb8c6e7da348447cc039e221ad3c7f8f5a1d8f6391e42cf10585ed0154",
+            "checks": [
+              {
+                "check_id": "api-crud",
+                "status": "passed",
+                "exit_code": 0,
+                "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.915 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m7.838 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.620 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.577 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.475 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.287 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.180 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.307 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.140 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.839 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (119.731208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 613.146386\n"
+              },
+              {
+                "check_id": "email-normalization",
+                "status": "passed",
+                "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:50:23+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.",
+              "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+              "tree": "4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071",
+              "reviewed_at": "2026-10-02T08:48:53+00:00"
+            },
+            "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+          }
+        },
+        {
+          "task_id": 21,
+          "title": "리뷰 수정: frontend",
+          "run_id": "herdr-21-a5cb065618aa",
+          "evidence": {
+            "integrated_commit": "c10cb3eb58caacb06f0232d7952d686df4807a68",
+            "base_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+            "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+            "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "68313a1277e320898166539d5fed00b38782007fc27afb2a5537bf2079906089",
+            "checks_sha256": "203a33ae5e484d395c8d19bc0a87b873ec3f82f41e40667a061d4339706b923d",
+            "checks": [
+              {
+                "check_id": "frontend-syntax",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              },
+              {
+                "check_id": "refresh-browser",
+                "status": "passed",
+                "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:50:26+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.",
+              "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+              "tree": "825c07efa60c5d2bd3a36f98d2062405ede97e0f",
+              "reviewed_at": "2026-10-02T08:48:55+00:00"
+            },
+            "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+          }
+        },
+        {
+          "task_id": 22,
+          "title": "검증 마무리: 실행 안내 문서",
+          "run_id": "herdr-22-cce865588ec5",
+          "evidence": {
+            "integrated_commit": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+            "base_commit": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+            "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+            "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "b5b0db64f436138e94fea36d47476d28936ac38b13fcd4d7270ef9d794857ff4",
+            "checks_sha256": "6370f45253b992aa144152dd7c146a65a8a5d9108aedb896edfbf9a0ce18e3d1",
+            "checks": [
+              {
+                "check_id": "run-guide",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:51:20+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.",
+              "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+              "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+              "reviewed_at": "2026-10-02T08:51:16+00:00"
+            },
+            "manual_evidence": "README contents inspected against implemented application."
+          }
+        }
+      ],
+      "spec_sha256": "425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234",
+      "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+      "approval_hash": "970cdb17cd819c6858c264a5cbabd8d7c37fcc90fd425f2e802986f2602b7532",
+      "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+      "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+      "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": [
+        {
+          "check_id": "api-crud",
+          "kind": "command",
+          "status": "passed",
+          "exit_code": 0,
+          "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.495 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m6.348 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.612 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.541 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.479 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.293 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.197 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.328 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.131 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.659 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (81.248254ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 267.314002\n",
+          "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "at": "2026-10-02T08:51:22+00:00"
+        }
+      ],
+      "review_guidance": [
+        {
+          "check_id": "api-crud",
+          "criterion": "CRUD validation and missing records pass"
+        }
+      ],
+      "verified": true,
+      "checked_at": "2026-10-02T08:51:22+00:00"
+    },
+    "created_at": "2026-10-02T08:39:05+00:00",
+    "updated_at": "2026-10-02T08:51:22+00:00",
+    "observed_state": "review",
+    "revision_new_work": [
+      20,
+      21,
+      22
+    ],
+    "reopen_reason": "Simulated second review: normalize employee email lowercase and add a refresh button to the list. Clear old space using persisted project policy.",
+    "title": "반복 검증: Express 사원 CRUD API와 웹 인터페이스",
+    "state": "review",
+    "done": false,
+    "work": [
+      {
+        "task_id": 18,
+        "title": "backend employee CRUD 구현",
+        "project_id": 17,
+        "role": "work",
+        "state": "done",
+        "run_id": "herdr-18-7581da2fe24c",
+        "linked": true,
+        "sync": "in_sync",
+        "done": true,
+        "completion": {
+          "kind": "herdr",
+          "run_id": "herdr-18-7581da2fe24c",
+          "plan_revision": 3,
+          "evidence": {
+            "integrated_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+            "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+            "head": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+            "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+            "checks": [
+              {
+                "check_id": "api-crud",
+                "status": "passed",
+                "exit_code": 0,
+                "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m4.288 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m134.697 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.938 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.888 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.684 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.461 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.271 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.459 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.241 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m2.465 ms - 176\u001b[0m\n✔ employee CRUD, validation, and missing records (240.261874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 405.075172\n"
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:42:24+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+              "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+              "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+              "reviewed_at": "2026-10-02T08:42:20+00:00"
+            },
+            "manual_evidence": "Backend inspected and integrated. Rerun approved API checks."
+          },
+          "completed_at": "2026-10-02T08:42:25+00:00",
+          "operation_id": "977d6318fc4f46a0bc2494ee759aae10"
+        }
+      },
+      {
+        "task_id": 19,
+        "title": "frontend employee CRUD 구현",
+        "project_id": 16,
+        "role": "work",
+        "state": "done",
+        "run_id": "herdr-19-3c76c2586cac",
+        "linked": true,
+        "sync": "in_sync",
+        "done": true,
+        "completion": {
+          "kind": "herdr",
+          "run_id": "herdr-19-3c76c2586cac",
+          "plan_revision": 3,
+          "evidence": {
+            "integrated_commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+            "base_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+            "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+            "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+            "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+            "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+            "checks": [
+              {
+                "check_id": "frontend-syntax",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              },
+              {
+                "check_id": "ui-browser",
+                "status": "passed",
+                "evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:44:13+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+              "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+              "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+              "reviewed_at": "2026-10-02T08:43:41+00:00"
+            },
+            "manual_evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+          },
+          "completed_at": "2026-10-02T08:44:14+00:00",
+          "operation_id": "7ed374693fb940b9a28ee9ef6534f2ef"
+        }
+      },
+      {
+        "task_id": 20,
+        "title": "리뷰 수정: backend",
+        "project_id": 17,
+        "role": "work",
+        "state": "done",
+        "run_id": "herdr-20-53c28f5ba0a2",
+        "linked": true,
+        "sync": "in_sync",
+        "done": true,
+        "completion": {
+          "kind": "herdr",
+          "run_id": "herdr-20-53c28f5ba0a2",
+          "plan_revision": 7,
+          "evidence": {
+            "integrated_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+            "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+            "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+            "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "a7f9dd7e0ec5ea0ada936b4527b7d24c0050a89d6030247eb1d5a3b8b3649880",
+            "checks_sha256": "a917d6fb8c6e7da348447cc039e221ad3c7f8f5a1d8f6391e42cf10585ed0154",
+            "checks": [
+              {
+                "check_id": "api-crud",
+                "status": "passed",
+                "exit_code": 0,
+                "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.915 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m7.838 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.620 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.577 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.475 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.287 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.180 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.307 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.140 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.839 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (119.731208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 613.146386\n"
+              },
+              {
+                "check_id": "email-normalization",
+                "status": "passed",
+                "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:50:23+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.",
+              "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+              "tree": "4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071",
+              "reviewed_at": "2026-10-02T08:48:53+00:00"
+            },
+            "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+          },
+          "completed_at": "2026-10-02T08:50:24+00:00",
+          "operation_id": "7981ed8a07f0463da10285c3d7aa565f"
+        }
+      },
+      {
+        "task_id": 21,
+        "title": "리뷰 수정: frontend",
+        "project_id": 16,
+        "role": "work",
+        "state": "done",
+        "run_id": "herdr-21-a5cb065618aa",
+        "linked": true,
+        "sync": "in_sync",
+        "done": true,
+        "completion": {
+          "kind": "herdr",
+          "run_id": "herdr-21-a5cb065618aa",
+          "plan_revision": 7,
+          "evidence": {
+            "integrated_commit": "c10cb3eb58caacb06f0232d7952d686df4807a68",
+            "base_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+            "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+            "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "68313a1277e320898166539d5fed00b38782007fc27afb2a5537bf2079906089",
+            "checks_sha256": "203a33ae5e484d395c8d19bc0a87b873ec3f82f41e40667a061d4339706b923d",
+            "checks": [
+              {
+                "check_id": "frontend-syntax",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              },
+              {
+                "check_id": "refresh-browser",
+                "status": "passed",
+                "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:50:26+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.",
+              "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+              "tree": "825c07efa60c5d2bd3a36f98d2062405ede97e0f",
+              "reviewed_at": "2026-10-02T08:48:55+00:00"
+            },
+            "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+          },
+          "completed_at": "2026-10-02T08:50:27+00:00",
+          "operation_id": "46d39b6a056a4d42aef3d3adcf7882ed"
+        }
+      },
+      {
+        "task_id": 22,
+        "title": "검증 마무리: 실행 안내 문서",
+        "project_id": 17,
+        "role": "work",
+        "state": "done",
+        "run_id": "herdr-22-cce865588ec5",
+        "linked": true,
+        "sync": "in_sync",
+        "done": true,
+        "completion": {
+          "kind": "herdr",
+          "run_id": "herdr-22-cce865588ec5",
+          "plan_revision": 7,
+          "evidence": {
+            "integrated_commit": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+            "base_commit": "df2df23974656ce1b826a4bf53b672063bab890c",
+            "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+            "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+            "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+            "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "spec_sha256": "b5b0db64f436138e94fea36d47476d28936ac38b13fcd4d7270ef9d794857ff4",
+            "checks_sha256": "6370f45253b992aa144152dd7c146a65a8a5d9108aedb896edfbf9a0ce18e3d1",
+            "checks": [
+              {
+                "check_id": "run-guide",
+                "status": "passed",
+                "exit_code": 0,
+                "output": ""
+              }
+            ],
+            "verified": true,
+            "checked_at": "2026-10-02T08:51:20+00:00",
+            "review": {
+              "decision": "accept",
+              "notes": "README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.",
+              "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+              "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+              "reviewed_at": "2026-10-02T08:51:16+00:00"
+            },
+            "manual_evidence": "README contents inspected against implemented application."
+          },
+          "completed_at": "2026-10-02T08:51:20+00:00",
+          "operation_id": "6c3e2c7341b349f49d88b2e5860b34f9"
+        }
+      }
+    ],
+    "external_change": null,
+    "blockers": [],
+    "next_owner": "user"
+  },
+  "comments": [
+    {
+      "id": 49,
+      "comment": "[Handrail operation a42a30f78b20cefc0c1b748b7a0a865a]\nHerdr assignment [50527b48afc8f23d1fc5fd5d838262b5]\nTime: 2026-10-02T08:39:08+00:00\nWork card: 18\n{\"assigned_at\": \"2026-10-02T08:39:08+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:08Z",
+      "updated": "2026-10-02T08:39:08Z"
+    },
+    {
+      "id": 50,
+      "comment": "[Handrail operation 072e043427084d564ee974619043fcc6]\nHerdr assignment [5bc21080126b08edd25d00ea43df70e0]\nTime: 2026-10-02T08:39:09+00:00\nWork card: 19\n{\"assigned_at\": \"2026-10-02T08:39:09+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:09Z",
+      "updated": "2026-10-02T08:39:09Z"
+    },
+    {
+      "id": 51,
+      "comment": "[Handrail operation 35ecbb98d6e7e2cab359aba3fcbf0ae6]\nHerdr worker_start [419b3e33d1cd326f359ca896ae0a07f0]\nTime: 2026-10-02T08:39:30+00:00\nWork card: 18\n{\"instruction\": \"Implement backend CRUD per docs/contract.md and tests/api.test.js. Edit app.js and routes/employees.js only. No npm/dependency changes or commits. Frontend agent works separately. Run node --check changed files; orchestrator installs dependencies and runs integrated API tests. Report completion.\\n\\nApproved task specification:\\n# Repeated acceptance task 18\\n\\n## Goal\\nImplement backend.\\n\\n## Scope\\nImplement docs/contract.md, only files assigned there. Do not change tests.\\n\\n## Constraints\\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\\n\\n## Completion criteria\\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\\n\\n## Verification plan\\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:30Z",
+      "updated": "2026-10-02T08:39:30Z"
+    },
+    {
+      "id": 52,
+      "comment": "[Handrail operation 409f17d3607af9ede335fc496917fe76]\nHerdr workspace_creation [5884fefbdb3a03c7da156735f18b3fc7]\nTime: 2026-10-02T08:39:31+00:00\nWork card: -\n{\"label\": \"herdr-employee-repeat (17)\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:31Z",
+      "updated": "2026-10-02T08:39:31Z"
+    },
+    {
+      "id": 53,
+      "comment": "[Handrail operation d31d5e7d1b0718b90e836a7bedc27526]\nHerdr worker_pane [cc8b9bdf334dffdda3f19141da9127b9]\nTime: 2026-10-02T08:39:31+00:00\nWork card: 18\n{\"pane_parent\": \"wR:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-18\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:31Z",
+      "updated": "2026-10-02T08:39:31Z"
+    },
+    {
+      "id": 54,
+      "comment": "[Handrail operation e959d9efe69b2443a1172c7fc3c6a2bb]\nHerdr worker_start [6698601eeba6cbf9ec000c6802d52047]\nTime: 2026-10-02T08:39:37+00:00\nWork card: 19\n{\"instruction\": \"Implement employee CRUD web interface per docs/contract.md. Edit only public/index.html, public/javascripts/employees.js, public/stylesheets/style.css. Backend agent works separately. Use IDs employee-form,name,email,department,submit-btn,employee-list,status, each row class employee-item, name class employee-name, buttons Edit/Delete. No npm/dependency changes or commits. Run node --check and report.\\n\\nApproved task specification:\\n# Repeated acceptance task 19\\n\\n## Goal\\nImplement frontend.\\n\\n## Scope\\nImplement docs/contract.md, only files assigned there. Do not change tests.\\n\\n## Constraints\\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\\n\\n## Completion criteria\\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\\n\\n## Verification plan\\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:38Z",
+      "updated": "2026-10-02T08:39:38Z"
+    },
+    {
+      "id": 55,
+      "comment": "[Handrail operation fa6939523a598c32ac73a0e33e660a19]\nHerdr worker_pane [8d752cfe8a4604cb731fcf73202376bf]\nTime: 2026-10-02T08:39:38+00:00\nWork card: 19\n{\"pane_parent\": \"wR:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-19\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:39:38Z",
+      "updated": "2026-10-02T08:39:38Z"
+    },
+    {
+      "id": 56,
+      "comment": "[Handrail operation fe13be18c70c34563d6ac771a7564dbd]\nHerdr delivery_diagnostic [c3d4dfe29831e2aa0ee6cf0f45975c62]\nTime: 2026-10-02T08:40:50+00:00\nWork card: 18\n{\"reason\": \"Testing direct native prompt after prior agent_not_ready rejection; approved instruction remains identical to recorded task packet.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:40:50Z",
+      "updated": "2026-10-02T08:40:50Z"
+    },
+    {
+      "id": 57,
+      "comment": "[Handrail operation 99d52245334bdaf8e1c278af8578f574]\nHerdr delivery_reconciliation [75bd8570df0d30d300b4e62bb330a341]\nTime: 2026-10-02T08:41:42+00:00\nWork card: 18\n{\"agent\": \"work-18\", \"evidence\": \"After definite native agent_not_ready rejection, diagnostic native prompt succeeded and agent state is working. Same approved packet, no duplicate accepted instructions.\", \"resolution\": \"delivered\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:41:42Z",
+      "updated": "2026-10-02T08:41:42Z"
+    },
+    {
+      "id": 58,
+      "comment": "[Handrail operation 6d24ea26a85057a65c5837f3a135b15e]\nHerdr delivery_reconciliation [c3a530fc0cce5ba473b3e927e8b87b69]\nTime: 2026-10-02T08:41:43+00:00\nWork card: 19\n{\"agent\": \"work-19\", \"evidence\": \"Native initial submission rejected agent_not_ready before input. Agent screen is empty ready input.\", \"resolution\": \"not-delivered\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:41:43Z",
+      "updated": "2026-10-02T08:41:43Z"
+    },
+    {
+      "id": 59,
+      "comment": "[Handrail operation b69b14efbad30e9324922e119986e04e]\nHerdr instruction [3b0dfdbacaaed5de659e757863ca424e]\nTime: 2026-10-02T08:41:45+00:00\nWork card: 19\n{\"instruction\": \"Implement frontend now by reading .handrail/runtime/herdr-task.md. Use required element IDs and classes for automated browser checks. No npm or commits. Report completion and syntax check.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:41:45Z",
+      "updated": "2026-10-02T08:41:45Z"
+    },
+    {
+      "id": 60,
+      "comment": "[Handrail operation 89ed22230569bc79bc1bf2b4ec9424c8]\nHerdr orchestration_review [0ff2670820ed9d6c9563d93024f624fd]\nTime: 2026-10-02T08:42:20+00:00\nWork card: 18\n{\"decision\": \"accept\", \"diff_sha256\": \"dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9\", \"notes\": \"Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.\", \"tree\": \"79b1f5330a20e99a9586a673192b8a828088968e\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:42:20Z",
+      "updated": "2026-10-02T08:42:20Z"
+    },
+    {
+      "id": 61,
+      "comment": "[Handrail operation b6bf4014004324c58c1cad16a9eb818a]\nHerdr integration [eda188f256fb208b3a1f8f51cf66c41c]\nTime: 2026-10-02T08:42:22+00:00\nWork card: 18\n{\"base\": \"cc8e395682edb1cf686e3a653bcac9119cab900a\", \"diff_sha256\": \"dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:42:22Z",
+      "updated": "2026-10-02T08:42:22Z"
+    },
+    {
+      "id": 62,
+      "comment": "[Handrail operation 94f5248773ef005a934457528cbe7c9f]\nHerdr verification_started [8efdcdab4c7ad887de0a3aca6e69ffb3]\nTime: 2026-10-02T08:42:23+00:00\nWork card: 18\n{\"commit\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:42:23Z",
+      "updated": "2026-10-02T08:42:23Z"
+    },
+    {
+      "id": 63,
+      "comment": "[Handrail operation 9c418d6d2c316f728e4876cd9573b728]\nHerdr worker_completion [eff3545ade3f0da8b4906a6ee279b901]\nTime: 2026-10-02T08:42:24+00:00\nWork card: 18\n{\"checks\": [{\"check_id\": \"api-crud\", \"exit_code\": 0, \"output\": \"\\u001b[0mGET /api/employees \\u001b[32m200 \\u001b[0m4.288 ms - 2\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[33m400 \\u001b[0m134.697 ms - 28\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[32m201 \\u001b[0m0.938 ms - 74\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[32m200 \\u001b[0m0.888 ms - 74\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[32m200 \\u001b[0m0.684 ms - 69\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[33m400 \\u001b[0m0.461 ms - 28\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[32m204 \\u001b[0m0.271 ms - -\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[33m404 \\u001b[0m0.459 ms - 30\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[33m404 \\u001b[0m0.241 ms - 30\\u001b[0m\\n\\u001b[0mGET / \\u001b[32m200 \\u001b[0m2.465 ms - 176\\u001b[0m\\n✔ employee CRUD, validation, and missing records (240.261874ms)\\nℹ tests 1\\nℹ suites 0\\nℹ pass 1\\nℹ fail 0\\nℹ cancelled 0\\nℹ skipped 0\\nℹ todo 0\\nℹ duration_ms 405.075172\\n\", \"status\": \"passed\"}], \"commit\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"head\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"user_evidence\": \"Backend inspected and integrated. Rerun approved API checks.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:42:24Z",
+      "updated": "2026-10-02T08:42:24Z"
+    },
+    {
+      "id": 64,
+      "comment": "[Handrail operation da203df5a562dfc7a7d7994f743c7ccc]\nHerdr orchestration_review [e50271555c392de15fbd960e260f7a75]\nTime: 2026-10-02T08:43:41+00:00\nWork card: 19\n{\"decision\": \"accept\", \"diff_sha256\": \"9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4\", \"notes\": \"Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.\", \"tree\": \"0e68780b90766fbb8ab2bf879ace2ed7bccfc52c\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:43:41Z",
+      "updated": "2026-10-02T08:43:41Z"
+    },
+    {
+      "id": 65,
+      "comment": "[Handrail operation 7ca5a4060e7a8fcbfecc8ea9997045f6]\nHerdr integration [c1a95bd9242512c7bb8b0346e9911e41]\nTime: 2026-10-02T08:43:42+00:00\nWork card: 19\n{\"base\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"diff_sha256\": \"9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:43:43Z",
+      "updated": "2026-10-02T08:43:43Z"
+    },
+    {
+      "id": 66,
+      "comment": "[Handrail operation 1883e6ee90a618360b64fd646d2224a5]\nHerdr verification_started [6214e6f55b9e2be29a98947a9ed6f7ba]\nTime: 2026-10-02T08:44:13+00:00\nWork card: 19\n{\"commit\": \"da28a8c2b518e0774eb54ef2a7ad26acd66fef98\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:44:13Z",
+      "updated": "2026-10-02T08:44:13Z"
+    },
+    {
+      "id": 67,
+      "comment": "[Handrail operation 72e09b31afaeb34b694bf4ebc673d118]\nHerdr worker_completion [e3f688e2fca6f960f27a1d9414c25c65]\nTime: 2026-10-02T08:44:13+00:00\nWork card: 19\n{\"checks\": [{\"check_id\": \"frontend-syntax\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}, {\"check_id\": \"ui-browser\", \"evidence\": \"Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions.\", \"status\": \"passed\"}], \"commit\": \"da28a8c2b518e0774eb54ef2a7ad26acd66fef98\", \"head\": \"bf8a794564aa29267ae1edac9f4a298e7ebdf63a\", \"user_evidence\": \"Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:44:13Z",
+      "updated": "2026-10-02T08:44:13Z"
+    },
+    {
+      "id": 68,
+      "comment": "[Handrail operation 12934c6234a61106fdfc1db92c4c11de]\nHerdr plan_verification_started [16150893bb592e835514d38af124cdba]\nTime: 2026-10-02T08:44:52+00:00\nWork card: -\n{}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:44:52Z",
+      "updated": "2026-10-02T08:44:52Z"
+    },
+    {
+      "id": 69,
+      "comment": "[Handrail operation f520008e6989393d3316a585a3932559]\nHerdr plan_verification_finished [5f2627c638a189d3d85b0c676b23133c]\nTime: 2026-10-02T08:44:53+00:00\nWork card: -\n{\"verified\": true}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:44:53Z",
+      "updated": "2026-10-02T08:44:53Z"
+    },
+    {
+      "id": 70,
+      "comment": "[Handrail operation e8fb332823a7b0c12d625998d2370b4c]\nHerdr review_submission [be1bfd54f6a44f4e688749f429daf4d6]\nTime: 2026-10-02T08:45:47+00:00\nWork card: -\n{\"space_retained\": {\"created_at\": \"2026-10-02T08:39:31+00:00\", \"label\": \"herdr-employee-repeat (17)\", \"root_pane\": \"wR:p1\", \"workspace_id\": \"wR\"}}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:48Z",
+      "updated": "2026-10-02T08:45:48Z"
+    },
+    {
+      "id": 71,
+      "comment": "[Handrail operation ad16b84f1f12b146a9099307ba9c7426]\nReview submission 837f4873d2934752a4439b637e2d70e9\n\nHandrail plan revision 3 submitted for user review.\nRequired work: 18, 19.\nIntegrated HEAD: bf8a794564aa29267ae1edac9f4a298e7ebdf63a\nFingerprint: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nSpecification: 425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234\nChecks: api-crud (all passed).\n\nCompleted work:\n- Task 18: backend employee CRUD 구현 (run herdr-18-7581da2fe24c)\n- Task 19: frontend employee CRUD 구현 (run herdr-19-3c76c2586cac)\n\nUser review criteria:\n- api-crud: CRUD validation and missing records pass\n\nPlease inspect the integrated result against these criteria. Accept this plan after review, or request new child work for corrections.",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:49Z",
+      "updated": "2026-10-02T08:45:49Z"
+    },
+    {
+      "id": 72,
+      "comment": "[Handrail operation ccdb6feedf2795d5ebdeab8efe9c6d85]\nHerdr reopen [6fb39cf7571fde0c62116a8a3bf082f6]\nTime: 2026-10-02T08:45:50+00:00\nWork card: -\n{\"clear_workers\": true, \"reason\": \"Simulated second review: normalize employee email lowercase and add a refresh button to the list. Clear old space using persisted project policy.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:51Z",
+      "updated": "2026-10-02T08:45:51Z"
+    },
+    {
+      "id": 73,
+      "comment": "[Handrail operation f3e4e9bfbf4b6bf8e82ba12c7f59a6cd]\nHerdr workspace_clear [0d4a33c95000fcc3e38a7b8175021689]\nTime: 2026-10-02T08:45:51+00:00\nWork card: -\n{\"workspace_id\": \"wR\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:51Z",
+      "updated": "2026-10-02T08:45:51Z"
+    },
+    {
+      "id": 74,
+      "comment": "[Handrail operation 45f81dff779fc345500226c1eab4bb94]\nHerdr assignment [c4c8cdfb2045d7cf4ab8a492d684d78a]\nTime: 2026-10-02T08:45:56+00:00\nWork card: 20\n{\"assigned_at\": \"2026-10-02T08:45:56+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:56Z",
+      "updated": "2026-10-02T08:45:56Z"
+    },
+    {
+      "id": 75,
+      "comment": "[Handrail operation 6d8dcb1fc44fef9a9f887b9f05c9bff9]\nHerdr assignment [1e53b4d6397bc47fb88b9ec8340c2085]\nTime: 2026-10-02T08:45:57+00:00\nWork card: 21\n{\"assigned_at\": \"2026-10-02T08:45:57+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:45:58Z",
+      "updated": "2026-10-02T08:45:58Z"
+    },
+    {
+      "id": 76,
+      "comment": "[Handrail operation 0480aa8357864b3ee0a243eb17c4e11b]\nHerdr worker_start [2c089d184895deb5c327b1f9cbcef03c]\nTime: 2026-10-02T08:46:23+00:00\nWork card: 20\n{\"instruction\": \"Apply approved backend correction: lowercase trimmed email on both create and update in routes/employees.js only. No dependencies/tests/commits. Run syntax check and report.\\n\\nApproved task specification:\\n# Review correction 20\\n\\n## Goal\\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\\n\\n## Scope\\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\\n\\n## Constraints\\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\\n\\n## Completion criteria\\nRequested behavior works and earlier CRUD remains unchanged.\\n\\n## Verification plan\\nManager runs API/browser regression and inspects scope.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:46:23Z",
+      "updated": "2026-10-02T08:46:23Z"
+    },
+    {
+      "id": 77,
+      "comment": "[Handrail operation 9576a4b1e3b1f317e11f2c2a452082d7]\nHerdr workspace_creation [d37749fd47ee9e8f347619d4d7600ab3]\nTime: 2026-10-02T08:46:23+00:00\nWork card: -\n{\"label\": \"herdr-employee-repeat (17)\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:46:24Z",
+      "updated": "2026-10-02T08:46:24Z"
+    },
+    {
+      "id": 78,
+      "comment": "[Handrail operation 334282c0b64d4693fef37559d304f617]\nHerdr worker_pane [ccfc72f06beb480b3d02c0bd7b9f96fa]\nTime: 2026-10-02T08:46:24+00:00\nWork card: 20\n{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-20\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:46:24Z",
+      "updated": "2026-10-02T08:46:24Z"
+    },
+    {
+      "id": 79,
+      "comment": "[Handrail operation 389283fda7723782b9f000e2a9bd2023]\nHerdr worker_start [35a9d7a0cf79528a32fade8f1aed86c1]\nTime: 2026-10-02T08:46:36+00:00\nWork card: 21\n{\"instruction\": \"Apply approved frontend correction: Refresh button id refresh-btn near list heading invoking loadEmployees. Touch public/index.html and public/javascripts/employees.js only, preserve CRUD. No dependencies/tests/commits. Run syntax check and report.\\n\\nApproved task specification:\\n# Review correction 21\\n\\n## Goal\\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\\n\\n## Scope\\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\\n\\n## Constraints\\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\\n\\n## Completion criteria\\nRequested behavior works and earlier CRUD remains unchanged.\\n\\n## Verification plan\\nManager runs API/browser regression and inspects scope.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:46:36Z",
+      "updated": "2026-10-02T08:46:36Z"
+    },
+    {
+      "id": 80,
+      "comment": "[Handrail operation 242ef57182ed811b3f6aa62293445caa]\nHerdr worker_pane [6567329d33c56f901d2d039020e68874]\nTime: 2026-10-02T08:46:36+00:00\nWork card: 21\n{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-21\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:46:37Z",
+      "updated": "2026-10-02T08:46:37Z"
+    },
+    {
+      "id": 81,
+      "comment": "[Handrail operation 10326ecdc61d15d239ae810509f61032]\nHerdr terminal_response [f813506f0bf85abce09f82c09ec4b4fc]\nTime: 2026-10-02T08:47:20+00:00\nWork card: 20\n{\"keys\": [\"enter\"], \"reason\": \"Inspected terminal: exact approved instruction is present in input buffer, not submitted; press Enter once without duplicating text.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:47:21Z",
+      "updated": "2026-10-02T08:47:21Z"
+    },
+    {
+      "id": 82,
+      "comment": "[Handrail operation c9889966edff6d436e38d8c3b16182c9]\nHerdr terminal_response [39632eb0ffb7373c5de57c09aaf35e19]\nTime: 2026-10-02T08:47:22+00:00\nWork card: 21\n{\"keys\": [\"enter\"], \"reason\": \"Inspected terminal: exact approved instruction is present in input buffer, not submitted; press Enter once without duplicating text.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:47:22Z",
+      "updated": "2026-10-02T08:47:22Z"
+    },
+    {
+      "id": 83,
+      "comment": "[Handrail operation 64db0ad6772f299ee0edaf2286b1b84a]\nHerdr delivery_reconciliation [e279991a4d0fd0aed8b74e2e24246945]\nTime: 2026-10-02T08:47:23+00:00\nWork card: 20\n{\"agent\": \"work-20\", \"evidence\": \"Full exact task instruction was in Cursor input; audited Enter submitted it without duplicate text. Agent is now working.\", \"resolution\": \"delivered\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:47:24Z",
+      "updated": "2026-10-02T08:47:24Z"
+    },
+    {
+      "id": 84,
+      "comment": "[Handrail operation 62e569b9750d85e0026236174fb3adc9]\nHerdr delivery_reconciliation [16740ed31c6c7c4f90841a3569359f4d]\nTime: 2026-10-02T08:47:24+00:00\nWork card: 21\n{\"agent\": \"work-21\", \"evidence\": \"Full exact task instruction was in Cursor input; audited Enter submitted it without duplicate text. Agent is now working.\", \"resolution\": \"delivered\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:47:25Z",
+      "updated": "2026-10-02T08:47:25Z"
+    },
+    {
+      "id": 85,
+      "comment": "[Handrail operation d8e7c416c404f06b6aeefcd773d1a236]\nHerdr orchestration_review [4d38e62d5b9ad670351dfad56449ca57]\nTime: 2026-10-02T08:48:53+00:00\nWork card: 20\n{\"decision\": \"accept\", \"diff_sha256\": \"be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3\", \"notes\": \"Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.\", \"tree\": \"4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:48:53Z",
+      "updated": "2026-10-02T08:48:53Z"
+    },
+    {
+      "id": 86,
+      "comment": "[Handrail operation 15a3c64c4e959dd6d1f30d13f18eddbe]\nHerdr integration [bf09f6e50bc5803af45690e72c637cc8]\nTime: 2026-10-02T08:48:54+00:00\nWork card: 20\n{\"base\": \"868415481d16bff00f0944ba532612b6628c7ef2\", \"diff_sha256\": \"be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:48:54Z",
+      "updated": "2026-10-02T08:48:54Z"
+    },
+    {
+      "id": 87,
+      "comment": "[Handrail operation 0c475973d173bf234e193bad71272e8d]\nHerdr orchestration_review [e3061fdf052d54ec8ce61d952a1076ee]\nTime: 2026-10-02T08:48:55+00:00\nWork card: 21\n{\"decision\": \"accept\", \"diff_sha256\": \"c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940\", \"notes\": \"Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.\", \"tree\": \"825c07efa60c5d2bd3a36f98d2062405ede97e0f\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:48:55Z",
+      "updated": "2026-10-02T08:48:55Z"
+    },
+    {
+      "id": 88,
+      "comment": "[Handrail operation a48b2c61a3b18848066b01f2818f5150]\nHerdr integration [f0f3d15f85d19c441a15d2498cbfe2b2]\nTime: 2026-10-02T08:48:57+00:00\nWork card: 21\n{\"base\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\", \"diff_sha256\": \"c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:48:57Z",
+      "updated": "2026-10-02T08:48:57Z"
+    },
+    {
+      "id": 89,
+      "comment": "[Handrail operation 18bc7576316412535ab5ac5a2cbbc174]\nHerdr assignment [98d4bcc7276fd17ffe22d7144f1b7100]\nTime: 2026-10-02T08:49:50+00:00\nWork card: 22\n{\"assigned_at\": \"2026-10-02T08:49:50+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:49:50Z",
+      "updated": "2026-10-02T08:49:50Z"
+    },
+    {
+      "id": 90,
+      "comment": "[Handrail operation dc7e9652664af6a0f7c411838e622e6d]\nHerdr worker_start [93c5b1525f83bd746885c90d82009f73]\nTime: 2026-10-02T08:49:53+00:00\nWork card: 22\n{\"instruction\": \"Write README.md only following approved specification: npm start, browser UI, employee API endpoints and in-memory data reset on restart. No other files or commands needed. Report completion.\\n\\nApproved task specification:\\n# Run guide\\n\\n## Goal\\nDocument running the employee CRUD demonstration.\\n\\n## Scope\\nOnly README.md. Mention npm start, /api/employees, browser UI use, and in-memory storage resetting on restart.\\n\\n## Constraints\\nDo not edit code, dependencies, tests or commit. No external requests.\\n\\n## Completion criteria\\nA new developer can run the app and understand the demo storage limitation.\\n\\n## Verification plan\\nManager inspects README and verifies required commands are present.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:49:53Z",
+      "updated": "2026-10-02T08:49:53Z"
+    },
+    {
+      "id": 91,
+      "comment": "[Handrail operation acf98864a3aa16f4bb8ccc2406800da0]\nHerdr worker_pane [c18dbb383d7aa55c107dc38a3e406e7c]\nTime: 2026-10-02T08:49:53+00:00\nWork card: 22\n{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-22\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:49:54Z",
+      "updated": "2026-10-02T08:49:54Z"
+    },
+    {
+      "id": 92,
+      "comment": "[Handrail operation a77a253472aac67b83f657fa62d03ac8]\nHerdr worker_dispatched [baa0cb4255c5385f9b4997d470f1a3a1]\nTime: 2026-10-02T08:50:07+00:00\nWork card: 22\n{\"agent\": \"work-22\", \"model\": \"auto\", \"pane\": \"wS:p4\", \"prompted_at\": \"2026-10-02T08:50:07+00:00\", \"provider\": \"cursor\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:50:07Z",
+      "updated": "2026-10-02T08:50:07Z"
+    },
+    {
+      "id": 93,
+      "comment": "[Handrail operation f3f4641609114c05406ae259da6169df]\nHerdr verification_started [314704ed183c249515ac19a069996657]\nTime: 2026-10-02T08:50:22+00:00\nWork card: 20\n{\"commit\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:50:22Z",
+      "updated": "2026-10-02T08:50:22Z"
+    },
+    {
+      "id": 94,
+      "comment": "[Handrail operation 2e334e7f07aaf4c0f97e0fdd18d0ffdd]\nHerdr worker_completion [9fbf9b615e06ead0658c44b285ae67bb]\nTime: 2026-10-02T08:50:23+00:00\nWork card: 20\n{\"checks\": [{\"check_id\": \"api-crud\", \"exit_code\": 0, \"output\": \"\\u001b[0mGET /api/employees \\u001b[32m200 \\u001b[0m3.915 ms - 2\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[33m400 \\u001b[0m7.838 ms - 28\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[32m201 \\u001b[0m0.620 ms - 74\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[32m200 \\u001b[0m0.577 ms - 74\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[32m200 \\u001b[0m0.475 ms - 69\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[33m400 \\u001b[0m0.287 ms - 28\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[32m204 \\u001b[0m0.180 ms - -\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[33m404 \\u001b[0m0.307 ms - 30\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[33m404 \\u001b[0m0.140 ms - 30\\u001b[0m\\n\\u001b[0mGET / \\u001b[32m200 \\u001b[0m1.839 ms - 1145\\u001b[0m\\n✔ employee CRUD, validation, and missing records (119.731208ms)\\nℹ tests 1\\nℹ suites 0\\nℹ pass 1\\nℹ fail 0\\nℹ cancelled 0\\nℹ skipped 0\\nℹ todo 0\\nℹ duration_ms 613.146386\\n\", \"status\": \"passed\"}, {\"check_id\": \"email-normalization\", \"evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\", \"status\": \"passed\"}], \"commit\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\", \"head\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"user_evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:50:23Z",
+      "updated": "2026-10-02T08:50:23Z"
+    },
+    {
+      "id": 95,
+      "comment": "[Handrail operation 8418bcdf7fc130ae345825de96db432b]\nHerdr verification_started [3d54feeed5053a17c6b50ad28ff97871]\nTime: 2026-10-02T08:50:25+00:00\nWork card: 21\n{\"commit\": \"c10cb3eb58caacb06f0232d7952d686df4807a68\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:50:25Z",
+      "updated": "2026-10-02T08:50:25Z"
+    },
+    {
+      "id": 96,
+      "comment": "[Handrail operation f2e77bdc4edfee4dfae65e84eb994118]\nHerdr worker_completion [5fafe92efed3159201161172d7cfa572]\nTime: 2026-10-02T08:50:26+00:00\nWork card: 21\n{\"checks\": [{\"check_id\": \"frontend-syntax\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}, {\"check_id\": \"refresh-browser\", \"evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\", \"status\": \"passed\"}], \"commit\": \"c10cb3eb58caacb06f0232d7952d686df4807a68\", \"head\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"user_evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:50:26Z",
+      "updated": "2026-10-02T08:50:26Z"
+    },
+    {
+      "id": 97,
+      "comment": "[Handrail operation 5a3dccca054b4549ac0807ca698b19e4]\nHerdr orchestration_review [856305f95e83e75a295135decc633f00]\nTime: 2026-10-02T08:51:16+00:00\nWork card: 22\n{\"decision\": \"accept\", \"diff_sha256\": \"419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5\", \"notes\": \"README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.\", \"tree\": \"0be87f8996e766f643061e6abeed7325860cd536\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:16Z",
+      "updated": "2026-10-02T08:51:16Z"
+    },
+    {
+      "id": 98,
+      "comment": "[Handrail operation 95a439c213a7765dd1bbebb30cc50521]\nHerdr integration [ddc5c4c914a2eeae3bb177970636d66f]\nTime: 2026-10-02T08:51:17+00:00\nWork card: 22\n{\"base\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"diff_sha256\": \"419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:17Z",
+      "updated": "2026-10-02T08:51:17Z"
+    },
+    {
+      "id": 99,
+      "comment": "[Handrail operation e78cdd2a179f2c62c0a7682b777a5d3e]\nHerdr verification_started [2d41d32888f20edc2698c48e65904419]\nTime: 2026-10-02T08:51:19+00:00\nWork card: 22\n{\"commit\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:19Z",
+      "updated": "2026-10-02T08:51:19Z"
+    },
+    {
+      "id": 100,
+      "comment": "[Handrail operation eb3973c625ecc55c26709ee5d852fd1f]\nHerdr worker_completion [fefdf7bf694cbb2baa19f8eb1595518d]\nTime: 2026-10-02T08:51:19+00:00\nWork card: 22\n{\"checks\": [{\"check_id\": \"run-guide\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}], \"commit\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\", \"head\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\", \"user_evidence\": \"README contents inspected against implemented application.\"}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:20Z",
+      "updated": "2026-10-02T08:51:20Z"
+    },
+    {
+      "id": 101,
+      "comment": "[Handrail operation c56432fa00a533427224ab4d29663974]\nHerdr plan_verification_started [3bc0ba06ebc08b3eaaaf069f2a707afe]\nTime: 2026-10-02T08:51:21+00:00\nWork card: -\n{}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:21Z",
+      "updated": "2026-10-02T08:51:21Z"
+    },
+    {
+      "id": 102,
+      "comment": "[Handrail operation 04f5a8a2d21ebee62a7835326a464d2a]\nHerdr plan_verification_finished [43ad62373e3e25f654be1518f57f8a14]\nTime: 2026-10-02T08:51:22+00:00\nWork card: -\n{\"verified\": true}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:23Z",
+      "updated": "2026-10-02T08:51:23Z"
+    },
+    {
+      "id": 103,
+      "comment": "[Handrail operation d97b75bdea594baba880ad9ee169675a]\nHerdr review_submission [cfad8455ba0d9579658c01a38ab7b2cd]\nTime: 2026-10-02T08:51:23+00:00\nWork card: -\n{\"space_retained\": {\"created_at\": \"2026-10-02T08:46:24+00:00\", \"label\": \"herdr-employee-repeat (17)\", \"root_pane\": \"wS:p1\", \"workspace_id\": \"wS\"}}",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:23Z",
+      "updated": "2026-10-02T08:51:23Z"
+    },
+    {
+      "id": 104,
+      "comment": "[Handrail operation 5db0654dfaf15b870a04005954ebf72d]\nReview submission b73067aab6f147358ae546180f8a9adb\n\nHandrail plan revision 7 submitted for user review.\nRequired work: 18, 19, 20, 21, 22.\nIntegrated HEAD: d9ccf267113930b181c4cbc43e46177affd41c7a\nFingerprint: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nSpecification: 425405416dab10c1e1849c51743e18b8a5de8c289882dff6386b1684ab4d0234\nChecks: api-crud (all passed).\n\nCompleted work:\n- Task 18: backend employee CRUD 구현 (run herdr-18-7581da2fe24c)\n- Task 19: frontend employee CRUD 구현 (run herdr-19-3c76c2586cac)\n- Task 20: 리뷰 수정: backend (run herdr-20-53c28f5ba0a2)\n- Task 21: 리뷰 수정: frontend (run herdr-21-a5cb065618aa)\n- Task 22: 검증 마무리: 실행 안내 문서 (run herdr-22-cce865588ec5)\n\nUser review criteria:\n- api-crud: CRUD validation and missing records pass\n\nPlease inspect the integrated result against these criteria. Accept this plan after review, or request new child work for corrections.",
+      "author": {
+        "id": 2,
+        "name": "codex-manager",
+        "username": "bot-codex-manager",
+        "bot_owner_id": 1,
+        "created": "2026-09-30T23:36:29Z",
+        "updated": "2026-09-30T23:36:29Z"
+      },
+      "reactions": null,
+      "created": "2026-10-02T08:51:25Z",
+      "updated": "2026-10-02T08:51:25Z"
+    }
+  ],
+  "herdr": {
+    "plan_id": 17,
+    "workspace": {
+      "workspace_id": "wS",
+      "root_pane": "wS:p1",
+      "label": "herdr-employee-repeat (17)",
+      "created_at": "2026-10-02T08:46:24+00:00"
+    },
+    "workers": {
+      "18": {
+        "provider": "cursor",
+        "model": "auto",
+        "effort": null,
+        "assigned_at": "2026-10-02T08:39:08+00:00",
+        "active": false,
+        "pane_status": "ready",
+        "pane_id": "wR:p2",
+        "worktree": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-18",
+        "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+        "name": "work-18",
+        "instruction": "Implement backend CRUD per docs/contract.md and tests/api.test.js. Edit app.js and routes/employees.js only. No npm/dependency changes or commits. Frontend agent works separately. Run node --check changed files; orchestrator installs dependencies and runs integrated API tests. Report completion.\n\nApproved task specification:\n# Repeated acceptance task 18\n\n## Goal\nImplement backend.\n\n## Scope\nImplement docs/contract.md, only files assigned there. Do not change tests.\n\n## Constraints\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\n\n## Completion criteria\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\n\n## Verification plan\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\n\n\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.",
+        "started_at": "2026-10-02T08:39:31+00:00",
+        "status": "complete",
+        "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+        "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+        "agent": "work-18",
+        "last_error": "Herdr agent failed (exit 1): {\"error\":{\"code\":\"agent_not_ready\",\"message\":\"agent work-18 is no longer the pane foreground process\"},\"id\":\"cli:agent:prompt\"}",
+        "reconciled_at": "2026-10-02T08:41:42+00:00",
+        "review": {
+          "decision": "accept",
+          "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+          "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+          "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+          "reviewed_at": "2026-10-02T08:42:20+00:00"
+        },
+        "integration": {
+          "commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+          "base": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+          "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+          "integrated_at": "2026-10-02T08:42:22+00:00"
+        },
+        "evidence": {
+          "integrated_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+          "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+          "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+          "head": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+          "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "spec_sha256": "f54cd55a0791094ec877a43fc308d764e62acf47f37c65c2897627217135b4b9",
+          "checks_sha256": "80fda331db3c9a1b770707994147bb8dba115993fe82324b382365b82ea168bc",
+          "checks": [
+            {
+              "check_id": "api-crud",
+              "status": "passed",
+              "exit_code": 0,
+              "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m4.288 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m134.697 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.938 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.888 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.684 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.461 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.271 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.459 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.241 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m2.465 ms - 176\u001b[0m\n✔ employee CRUD, validation, and missing records (240.261874ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 405.075172\n"
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:42:24+00:00",
+          "review": {
+            "decision": "accept",
+            "notes": "Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.",
+            "diff_sha256": "dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9",
+            "tree": "79b1f5330a20e99a9586a673192b8a828088968e",
+            "reviewed_at": "2026-10-02T08:42:20+00:00"
+          },
+          "manual_evidence": "Backend inspected and integrated. Rerun approved API checks."
+        }
+      },
+      "19": {
+        "provider": "cursor",
+        "model": "auto",
+        "effort": null,
+        "assigned_at": "2026-10-02T08:39:09+00:00",
+        "active": false,
+        "pane_status": "ready",
+        "pane_id": "wR:p3",
+        "worktree": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-19",
+        "base_commit": "cc8e395682edb1cf686e3a653bcac9119cab900a",
+        "name": "work-19",
+        "instruction": "Implement employee CRUD web interface per docs/contract.md. Edit only public/index.html, public/javascripts/employees.js, public/stylesheets/style.css. Backend agent works separately. Use IDs employee-form,name,email,department,submit-btn,employee-list,status, each row class employee-item, name class employee-name, buttons Edit/Delete. No npm/dependency changes or commits. Run node --check and report.\n\nApproved task specification:\n# Repeated acceptance task 19\n\n## Goal\nImplement frontend.\n\n## Scope\nImplement docs/contract.md, only files assigned there. Do not change tests.\n\n## Constraints\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\n\n## Completion criteria\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\n\n## Verification plan\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\n\n\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.",
+        "started_at": "2026-10-02T08:39:38+00:00",
+        "status": "complete",
+        "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+        "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+        "agent": "work-19",
+        "last_error": "Herdr agent failed (exit 1): {\"error\":{\"code\":\"agent_not_ready\",\"message\":\"agent work-19 is no longer the pane foreground process\"},\"id\":\"cli:agent:prompt\"}",
+        "reconciled_at": "2026-10-02T08:41:43+00:00",
+        "instructions": [
+          {
+            "text": "Implement frontend now by reading .handrail/runtime/herdr-task.md. Use required element IDs and classes for automated browser checks. No npm or commits. Report completion and syntax check.",
+            "at": "2026-10-02T08:41:46+00:00"
+          }
+        ],
+        "review": {
+          "decision": "accept",
+          "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+          "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+          "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+          "reviewed_at": "2026-10-02T08:43:41+00:00"
+        },
+        "integration": {
+          "commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+          "base": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+          "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+          "integrated_at": "2026-10-02T08:43:43+00:00"
+        },
+        "evidence": {
+          "integrated_commit": "da28a8c2b518e0774eb54ef2a7ad26acd66fef98",
+          "base_commit": "6d6caa754c69e71f30f255d2f4b1ba7aa05655d4",
+          "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+          "head": "bf8a794564aa29267ae1edac9f4a298e7ebdf63a",
+          "tree": "c4469e0e064672a3ef9ef7838b617a9a691f9794",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "spec_sha256": "6cec83126f59c8a11eb95e94d8d7ce656e959d01469b1f39add4c467bc084370",
+          "checks_sha256": "0b778e628a999c40895b999023a6e21976ba151699d8efcc4118f1764087ea2c",
+          "checks": [
+            {
+              "check_id": "frontend-syntax",
+              "status": "passed",
+              "exit_code": 0,
+              "output": ""
+            },
+            {
+              "check_id": "ui-browser",
+              "status": "passed",
+              "evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:44:13+00:00",
+          "review": {
+            "decision": "accept",
+            "notes": "Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.",
+            "diff_sha256": "9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4",
+            "tree": "0e68780b90766fbb8ab2bf879ace2ed7bccfc52c",
+            "reviewed_at": "2026-10-02T08:43:41+00:00"
+          },
+          "manual_evidence": "Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions."
+        }
+      },
+      "20": {
+        "provider": "cursor",
+        "model": "auto",
+        "effort": null,
+        "assigned_at": "2026-10-02T08:45:56+00:00",
+        "active": false,
+        "pane_status": "ready",
+        "pane_id": "wS:p2",
+        "worktree": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-20",
+        "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+        "name": "work-20",
+        "instruction": "Apply approved backend correction: lowercase trimmed email on both create and update in routes/employees.js only. No dependencies/tests/commits. Run syntax check and report.\n\nApproved task specification:\n# Review correction 20\n\n## Goal\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\n\n## Scope\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\n\n## Constraints\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\n\n## Completion criteria\nRequested behavior works and earlier CRUD remains unchanged.\n\n## Verification plan\nManager runs API/browser regression and inspects scope.\n\n\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.",
+        "started_at": "2026-10-02T08:46:24+00:00",
+        "status": "complete",
+        "spec_sha256": "a7f9dd7e0ec5ea0ada936b4527b7d24c0050a89d6030247eb1d5a3b8b3649880",
+        "checks_sha256": "a917d6fb8c6e7da348447cc039e221ad3c7f8f5a1d8f6391e42cf10585ed0154",
+        "agent": "work-20",
+        "last_error": "Herdr agent failed (exit 1): {\"error\":{\"code\":\"agent_prompt_stalled\",\"message\":\"agent prompt produced no observed working or blocked state within 5000 ms; current status is idle\"},\"id\":\"cli:agent:prompt\"}",
+        "reconciled_at": "2026-10-02T08:47:24+00:00",
+        "review": {
+          "decision": "accept",
+          "notes": "Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.",
+          "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+          "tree": "4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071",
+          "reviewed_at": "2026-10-02T08:48:53+00:00"
+        },
+        "integration": {
+          "commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+          "base": "868415481d16bff00f0944ba532612b6628c7ef2",
+          "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+          "integrated_at": "2026-10-02T08:48:54+00:00"
+        },
+        "evidence": {
+          "integrated_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+          "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+          "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+          "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+          "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "spec_sha256": "a7f9dd7e0ec5ea0ada936b4527b7d24c0050a89d6030247eb1d5a3b8b3649880",
+          "checks_sha256": "a917d6fb8c6e7da348447cc039e221ad3c7f8f5a1d8f6391e42cf10585ed0154",
+          "checks": [
+            {
+              "check_id": "api-crud",
+              "status": "passed",
+              "exit_code": 0,
+              "output": "\u001b[0mGET /api/employees \u001b[32m200 \u001b[0m3.915 ms - 2\u001b[0m\n\u001b[0mPOST /api/employees \u001b[33m400 \u001b[0m7.838 ms - 28\u001b[0m\n\u001b[0mPOST /api/employees \u001b[32m201 \u001b[0m0.620 ms - 74\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[32m200 \u001b[0m0.577 ms - 74\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[32m200 \u001b[0m0.475 ms - 69\u001b[0m\n\u001b[0mPUT /api/employees/1 \u001b[33m400 \u001b[0m0.287 ms - 28\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[32m204 \u001b[0m0.180 ms - -\u001b[0m\n\u001b[0mGET /api/employees/1 \u001b[33m404 \u001b[0m0.307 ms - 30\u001b[0m\n\u001b[0mDELETE /api/employees/1 \u001b[33m404 \u001b[0m0.140 ms - 30\u001b[0m\n\u001b[0mGET / \u001b[32m200 \u001b[0m1.839 ms - 1145\u001b[0m\n✔ employee CRUD, validation, and missing records (119.731208ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 613.146386\n"
+            },
+            {
+              "check_id": "email-normalization",
+              "status": "passed",
+              "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:50:23+00:00",
+          "review": {
+            "decision": "accept",
+            "notes": "Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.",
+            "diff_sha256": "be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3",
+            "tree": "4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071",
+            "reviewed_at": "2026-10-02T08:48:53+00:00"
+          },
+          "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+        }
+      },
+      "21": {
+        "provider": "cursor",
+        "model": "auto",
+        "effort": null,
+        "assigned_at": "2026-10-02T08:45:57+00:00",
+        "active": false,
+        "pane_status": "ready",
+        "pane_id": "wS:p3",
+        "worktree": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-21",
+        "base_commit": "868415481d16bff00f0944ba532612b6628c7ef2",
+        "name": "work-21",
+        "instruction": "Apply approved frontend correction: Refresh button id refresh-btn near list heading invoking loadEmployees. Touch public/index.html and public/javascripts/employees.js only, preserve CRUD. No dependencies/tests/commits. Run syntax check and report.\n\nApproved task specification:\n# Review correction 21\n\n## Goal\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\n\n## Scope\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\n\n## Constraints\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\n\n## Completion criteria\nRequested behavior works and earlier CRUD remains unchanged.\n\n## Verification plan\nManager runs API/browser regression and inspects scope.\n\n\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.",
+        "started_at": "2026-10-02T08:46:37+00:00",
+        "status": "complete",
+        "spec_sha256": "68313a1277e320898166539d5fed00b38782007fc27afb2a5537bf2079906089",
+        "checks_sha256": "203a33ae5e484d395c8d19bc0a87b873ec3f82f41e40667a061d4339706b923d",
+        "agent": "work-21",
+        "last_error": "Herdr agent failed (exit 1): {\"error\":{\"code\":\"agent_prompt_stalled\",\"message\":\"agent prompt produced no observed working or blocked state within 5000 ms; current status is idle\"},\"id\":\"cli:agent:prompt\"}",
+        "reconciled_at": "2026-10-02T08:47:25+00:00",
+        "review": {
+          "decision": "accept",
+          "notes": "Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.",
+          "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+          "tree": "825c07efa60c5d2bd3a36f98d2062405ede97e0f",
+          "reviewed_at": "2026-10-02T08:48:55+00:00"
+        },
+        "integration": {
+          "commit": "c10cb3eb58caacb06f0232d7952d686df4807a68",
+          "base": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+          "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+          "integrated_at": "2026-10-02T08:48:57+00:00"
+        },
+        "evidence": {
+          "integrated_commit": "c10cb3eb58caacb06f0232d7952d686df4807a68",
+          "base_commit": "cd1c6a24a070b00c5a9264e27712e0861167fcf2",
+          "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+          "head": "df2df23974656ce1b826a4bf53b672063bab890c",
+          "tree": "80797c41b01c8bfd7e56c52f01b66818685966e0",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "spec_sha256": "68313a1277e320898166539d5fed00b38782007fc27afb2a5537bf2079906089",
+          "checks_sha256": "203a33ae5e484d395c8d19bc0a87b873ec3f82f41e40667a061d4339706b923d",
+          "checks": [
+            {
+              "check_id": "frontend-syntax",
+              "status": "passed",
+              "exit_code": 0,
+              "output": ""
+            },
+            {
+              "check_id": "refresh-browser",
+              "status": "passed",
+              "evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:50:26+00:00",
+          "review": {
+            "decision": "accept",
+            "notes": "Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.",
+            "diff_sha256": "c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940",
+            "tree": "825c07efa60c5d2bd3a36f98d2062405ede97e0f",
+            "reviewed_at": "2026-10-02T08:48:55+00:00"
+          },
+          "manual_evidence": "Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display."
+        }
+      },
+      "22": {
+        "provider": "cursor",
+        "model": "auto",
+        "effort": null,
+        "assigned_at": "2026-10-02T08:49:50+00:00",
+        "active": false,
+        "pane_status": "ready",
+        "pane_id": "wS:p4",
+        "worktree": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-22",
+        "base_commit": "df2df23974656ce1b826a4bf53b672063bab890c",
+        "name": "work-22",
+        "instruction": "Write README.md only following approved specification: npm start, browser UI, employee API endpoints and in-memory data reset on restart. No other files or commands needed. Report completion.\n\nApproved task specification:\n# Run guide\n\n## Goal\nDocument running the employee CRUD demonstration.\n\n## Scope\nOnly README.md. Mention npm start, /api/employees, browser UI use, and in-memory storage resetting on restart.\n\n## Constraints\nDo not edit code, dependencies, tests or commit. No external requests.\n\n## Completion criteria\nA new developer can run the app and understand the demo storage limitation.\n\n## Verification plan\nManager inspects README and verifies required commands are present.\n\n\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.",
+        "started_at": "2026-10-02T08:49:54+00:00",
+        "status": "complete",
+        "spec_sha256": "b5b0db64f436138e94fea36d47476d28936ac38b13fcd4d7270ef9d794857ff4",
+        "checks_sha256": "6370f45253b992aa144152dd7c146a65a8a5d9108aedb896edfbf9a0ce18e3d1",
+        "agent": "work-22",
+        "prompted_at": "2026-10-02T08:50:07+00:00",
+        "review": {
+          "decision": "accept",
+          "notes": "README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.",
+          "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+          "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+          "reviewed_at": "2026-10-02T08:51:16+00:00"
+        },
+        "integration": {
+          "commit": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+          "base": "df2df23974656ce1b826a4bf53b672063bab890c",
+          "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+          "integrated_at": "2026-10-02T08:51:18+00:00"
+        },
+        "evidence": {
+          "integrated_commit": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+          "base_commit": "df2df23974656ce1b826a4bf53b672063bab890c",
+          "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+          "head": "d9ccf267113930b181c4cbc43e46177affd41c7a",
+          "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+          "fingerprint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "spec_sha256": "b5b0db64f436138e94fea36d47476d28936ac38b13fcd4d7270ef9d794857ff4",
+          "checks_sha256": "6370f45253b992aa144152dd7c146a65a8a5d9108aedb896edfbf9a0ce18e3d1",
+          "checks": [
+            {
+              "check_id": "run-guide",
+              "status": "passed",
+              "exit_code": 0,
+              "output": ""
+            }
+          ],
+          "verified": true,
+          "checked_at": "2026-10-02T08:51:20+00:00",
+          "review": {
+            "decision": "accept",
+            "notes": "README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.",
+            "diff_sha256": "419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5",
+            "tree": "0be87f8996e766f643061e6abeed7325860cd536",
+            "reviewed_at": "2026-10-02T08:51:16+00:00"
+          },
+          "manual_evidence": "README contents inspected against implemented application."
+        }
+      }
+    },
+    "events": [
+      {
+        "event_id": "50527b48afc8f23d1fc5fd5d838262b5",
+        "kind": "assignment",
+        "task_id": 18,
+        "detail": "{\"assigned_at\": \"2026-10-02T08:39:08+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:08+00:00",
+        "sending_at": "2026-10-02T08:39:08+00:00",
+        "logged_at": "2026-10-02T08:39:08+00:00"
+      },
+      {
+        "event_id": "5bc21080126b08edd25d00ea43df70e0",
+        "kind": "assignment",
+        "task_id": 19,
+        "detail": "{\"assigned_at\": \"2026-10-02T08:39:09+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:09+00:00",
+        "sending_at": "2026-10-02T08:39:09+00:00",
+        "logged_at": "2026-10-02T08:39:09+00:00"
+      },
+      {
+        "event_id": "419b3e33d1cd326f359ca896ae0a07f0",
+        "kind": "worker_start",
+        "task_id": 18,
+        "detail": "{\"instruction\": \"Implement backend CRUD per docs/contract.md and tests/api.test.js. Edit app.js and routes/employees.js only. No npm/dependency changes or commits. Frontend agent works separately. Run node --check changed files; orchestrator installs dependencies and runs integrated API tests. Report completion.\\n\\nApproved task specification:\\n# Repeated acceptance task 18\\n\\n## Goal\\nImplement backend.\\n\\n## Scope\\nImplement docs/contract.md, only files assigned there. Do not change tests.\\n\\n## Constraints\\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\\n\\n## Completion criteria\\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\\n\\n## Verification plan\\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:30+00:00",
+        "sending_at": "2026-10-02T08:39:30+00:00",
+        "logged_at": "2026-10-02T08:39:30+00:00"
+      },
+      {
+        "event_id": "5884fefbdb3a03c7da156735f18b3fc7",
+        "kind": "workspace_creation",
+        "task_id": null,
+        "detail": "{\"label\": \"herdr-employee-repeat (17)\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:31+00:00",
+        "sending_at": "2026-10-02T08:39:31+00:00",
+        "logged_at": "2026-10-02T08:39:31+00:00"
+      },
+      {
+        "event_id": "cc8b9bdf334dffdda3f19141da9127b9",
+        "kind": "worker_pane",
+        "task_id": 18,
+        "detail": "{\"pane_parent\": \"wR:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-18\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:31+00:00",
+        "sending_at": "2026-10-02T08:39:31+00:00",
+        "logged_at": "2026-10-02T08:39:31+00:00"
+      },
+      {
+        "event_id": "6698601eeba6cbf9ec000c6802d52047",
+        "kind": "worker_start",
+        "task_id": 19,
+        "detail": "{\"instruction\": \"Implement employee CRUD web interface per docs/contract.md. Edit only public/index.html, public/javascripts/employees.js, public/stylesheets/style.css. Backend agent works separately. Use IDs employee-form,name,email,department,submit-btn,employee-list,status, each row class employee-item, name class employee-name, buttons Edit/Delete. No npm/dependency changes or commits. Run node --check and report.\\n\\nApproved task specification:\\n# Repeated acceptance task 19\\n\\n## Goal\\nImplement frontend.\\n\\n## Scope\\nImplement docs/contract.md, only files assigned there. Do not change tests.\\n\\n## Constraints\\nNo commits, dependency changes, Handrail or Vikunja changes. Use current isolated worktree.\\n\\n## Completion criteria\\nEmployee CRUD succeeds, invalid input and missing records return suitable JSON errors. Web UI uses labels and safe text rendering.\\n\\n## Verification plan\\nRun the approved check and manager reviews diff. Integrated browser test verifies CRUD and error handling.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:37+00:00",
+        "sending_at": "2026-10-02T08:39:37+00:00",
+        "logged_at": "2026-10-02T08:39:38+00:00"
+      },
+      {
+        "event_id": "8d752cfe8a4604cb731fcf73202376bf",
+        "kind": "worker_pane",
+        "task_id": 19,
+        "detail": "{\"pane_parent\": \"wR:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-19\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:39:38+00:00",
+        "sending_at": "2026-10-02T08:39:38+00:00",
+        "logged_at": "2026-10-02T08:39:38+00:00"
+      },
+      {
+        "event_id": "c3d4dfe29831e2aa0ee6cf0f45975c62",
+        "kind": "delivery_diagnostic",
+        "task_id": 18,
+        "detail": "{\"reason\": \"Testing direct native prompt after prior agent_not_ready rejection; approved instruction remains identical to recorded task packet.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:40:50+00:00",
+        "sending_at": "2026-10-02T08:40:50+00:00",
+        "logged_at": "2026-10-02T08:40:50+00:00"
+      },
+      {
+        "event_id": "75bd8570df0d30d300b4e62bb330a341",
+        "kind": "delivery_reconciliation",
+        "task_id": 18,
+        "detail": "{\"agent\": \"work-18\", \"evidence\": \"After definite native agent_not_ready rejection, diagnostic native prompt succeeded and agent state is working. Same approved packet, no duplicate accepted instructions.\", \"resolution\": \"delivered\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:41:42+00:00",
+        "sending_at": "2026-10-02T08:41:42+00:00",
+        "logged_at": "2026-10-02T08:41:42+00:00"
+      },
+      {
+        "event_id": "c3a530fc0cce5ba473b3e927e8b87b69",
+        "kind": "delivery_reconciliation",
+        "task_id": 19,
+        "detail": "{\"agent\": \"work-19\", \"evidence\": \"Native initial submission rejected agent_not_ready before input. Agent screen is empty ready input.\", \"resolution\": \"not-delivered\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:41:43+00:00",
+        "sending_at": "2026-10-02T08:41:43+00:00",
+        "logged_at": "2026-10-02T08:41:43+00:00"
+      },
+      {
+        "event_id": "3b0dfdbacaaed5de659e757863ca424e",
+        "kind": "instruction",
+        "task_id": 19,
+        "detail": "{\"instruction\": \"Implement frontend now by reading .handrail/runtime/herdr-task.md. Use required element IDs and classes for automated browser checks. No npm or commits. Report completion and syntax check.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:41:45+00:00",
+        "sending_at": "2026-10-02T08:41:45+00:00",
+        "logged_at": "2026-10-02T08:41:45+00:00"
+      },
+      {
+        "event_id": "0ff2670820ed9d6c9563d93024f624fd",
+        "kind": "orchestration_review",
+        "task_id": 18,
+        "detail": "{\"decision\": \"accept\", \"diff_sha256\": \"dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9\", \"notes\": \"Reviewed backend scope and employee CRUD route: required trimmed strings, email format, status codes 200/201/204/400/404, no frontend or dependency changes. Execute API test after integration.\", \"tree\": \"79b1f5330a20e99a9586a673192b8a828088968e\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:42:20+00:00",
+        "sending_at": "2026-10-02T08:42:20+00:00",
+        "logged_at": "2026-10-02T08:42:20+00:00"
+      },
+      {
+        "event_id": "eda188f256fb208b3a1f8f51cf66c41c",
+        "kind": "integration",
+        "task_id": 18,
+        "detail": "{\"base\": \"cc8e395682edb1cf686e3a653bcac9119cab900a\", \"diff_sha256\": \"dcf3bae7b1733d2f40f00dc9288bed18f12b7707823aafe5cb3325ddf3ff2ee9\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:42:22+00:00",
+        "sending_at": "2026-10-02T08:42:22+00:00",
+        "logged_at": "2026-10-02T08:42:22+00:00"
+      },
+      {
+        "event_id": "8efdcdab4c7ad887de0a3aca6e69ffb3",
+        "kind": "verification_started",
+        "task_id": 18,
+        "detail": "{\"commit\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:42:23+00:00",
+        "sending_at": "2026-10-02T08:42:23+00:00",
+        "logged_at": "2026-10-02T08:42:23+00:00"
+      },
+      {
+        "event_id": "eff3545ade3f0da8b4906a6ee279b901",
+        "kind": "worker_completion",
+        "task_id": 18,
+        "detail": "{\"checks\": [{\"check_id\": \"api-crud\", \"exit_code\": 0, \"output\": \"\\u001b[0mGET /api/employees \\u001b[32m200 \\u001b[0m4.288 ms - 2\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[33m400 \\u001b[0m134.697 ms - 28\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[32m201 \\u001b[0m0.938 ms - 74\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[32m200 \\u001b[0m0.888 ms - 74\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[32m200 \\u001b[0m0.684 ms - 69\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[33m400 \\u001b[0m0.461 ms - 28\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[32m204 \\u001b[0m0.271 ms - -\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[33m404 \\u001b[0m0.459 ms - 30\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[33m404 \\u001b[0m0.241 ms - 30\\u001b[0m\\n\\u001b[0mGET / \\u001b[32m200 \\u001b[0m2.465 ms - 176\\u001b[0m\\n✔ employee CRUD, validation, and missing records (240.261874ms)\\nℹ tests 1\\nℹ suites 0\\nℹ pass 1\\nℹ fail 0\\nℹ cancelled 0\\nℹ skipped 0\\nℹ todo 0\\nℹ duration_ms 405.075172\\n\", \"status\": \"passed\"}], \"commit\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"head\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"user_evidence\": \"Backend inspected and integrated. Rerun approved API checks.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:42:24+00:00",
+        "sending_at": "2026-10-02T08:42:24+00:00",
+        "logged_at": "2026-10-02T08:42:24+00:00"
+      },
+      {
+        "event_id": "e50271555c392de15fbd960e260f7a75",
+        "kind": "orchestration_review",
+        "task_id": 19,
+        "detail": "{\"decision\": \"accept\", \"diff_sha256\": \"9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4\", \"notes\": \"Reviewed frontend HTML, CSS and JS: required IDs, safe textContent, list/create/edit/delete wiring, parseResponse handles 204 and errors. Scope preserved; manager will verify browser integration.\", \"tree\": \"0e68780b90766fbb8ab2bf879ace2ed7bccfc52c\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:43:41+00:00",
+        "sending_at": "2026-10-02T08:43:41+00:00",
+        "logged_at": "2026-10-02T08:43:41+00:00"
+      },
+      {
+        "event_id": "c1a95bd9242512c7bb8b0346e9911e41",
+        "kind": "integration",
+        "task_id": 19,
+        "detail": "{\"base\": \"6d6caa754c69e71f30f255d2f4b1ba7aa05655d4\", \"diff_sha256\": \"9f20055c37065837d57307446abad8ea475c680bf36c89ebbcf2614ccdc206c4\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:43:42+00:00",
+        "sending_at": "2026-10-02T08:43:42+00:00",
+        "logged_at": "2026-10-02T08:43:43+00:00"
+      },
+      {
+        "event_id": "6214e6f55b9e2be29a98947a9ed6f7ba",
+        "kind": "verification_started",
+        "task_id": 19,
+        "detail": "{\"commit\": \"da28a8c2b518e0774eb54ef2a7ad26acd66fef98\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:44:13+00:00",
+        "sending_at": "2026-10-02T08:44:13+00:00",
+        "logged_at": "2026-10-02T08:44:13+00:00"
+      },
+      {
+        "event_id": "e3f688e2fca6f960f27a1d9414c25c65",
+        "kind": "worker_completion",
+        "task_id": 19,
+        "detail": "{\"checks\": [{\"check_id\": \"frontend-syntax\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}, {\"check_id\": \"ui-browser\", \"evidence\": \"Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions.\", \"status\": \"passed\"}], \"commit\": \"da28a8c2b518e0774eb54ef2a7ad26acd66fef98\", \"head\": \"bf8a794564aa29267ae1edac9f4a298e7ebdf63a\", \"user_evidence\": \"Chromium passed create/list/update/delete, literal HTML safe rendering, server error feedback and no JavaScript exceptions.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:44:13+00:00",
+        "sending_at": "2026-10-02T08:44:13+00:00",
+        "logged_at": "2026-10-02T08:44:13+00:00"
+      },
+      {
+        "event_id": "16150893bb592e835514d38af124cdba",
+        "kind": "plan_verification_started",
+        "task_id": null,
+        "detail": "{}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:44:52+00:00",
+        "sending_at": "2026-10-02T08:44:52+00:00",
+        "logged_at": "2026-10-02T08:44:52+00:00"
+      },
+      {
+        "event_id": "5f2627c638a189d3d85b0c676b23133c",
+        "kind": "plan_verification_finished",
+        "task_id": null,
+        "detail": "{\"verified\": true}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:44:53+00:00",
+        "sending_at": "2026-10-02T08:44:53+00:00",
+        "logged_at": "2026-10-02T08:44:54+00:00"
+      },
+      {
+        "event_id": "be1bfd54f6a44f4e688749f429daf4d6",
+        "kind": "review_submission",
+        "task_id": null,
+        "detail": "{\"space_retained\": {\"created_at\": \"2026-10-02T08:39:31+00:00\", \"label\": \"herdr-employee-repeat (17)\", \"root_pane\": \"wR:p1\", \"workspace_id\": \"wR\"}}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:45:47+00:00",
+        "sending_at": "2026-10-02T08:45:47+00:00",
+        "logged_at": "2026-10-02T08:45:48+00:00"
+      },
+      {
+        "event_id": "6fb39cf7571fde0c62116a8a3bf082f6",
+        "kind": "reopen",
+        "task_id": null,
+        "detail": "{\"clear_workers\": true, \"reason\": \"Simulated second review: normalize employee email lowercase and add a refresh button to the list. Clear old space using persisted project policy.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:45:50+00:00",
+        "sending_at": "2026-10-02T08:45:50+00:00",
+        "logged_at": "2026-10-02T08:45:51+00:00"
+      },
+      {
+        "event_id": "0d4a33c95000fcc3e38a7b8175021689",
+        "kind": "workspace_clear",
+        "task_id": null,
+        "detail": "{\"workspace_id\": \"wR\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:45:51+00:00",
+        "sending_at": "2026-10-02T08:45:51+00:00",
+        "logged_at": "2026-10-02T08:45:52+00:00"
+      },
+      {
+        "event_id": "c4c8cdfb2045d7cf4ab8a492d684d78a",
+        "kind": "assignment",
+        "task_id": 20,
+        "detail": "{\"assigned_at\": \"2026-10-02T08:45:56+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:45:56+00:00",
+        "sending_at": "2026-10-02T08:45:56+00:00",
+        "logged_at": "2026-10-02T08:45:56+00:00"
+      },
+      {
+        "event_id": "1e53b4d6397bc47fb88b9ec8340c2085",
+        "kind": "assignment",
+        "task_id": 21,
+        "detail": "{\"assigned_at\": \"2026-10-02T08:45:57+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:45:57+00:00",
+        "sending_at": "2026-10-02T08:45:57+00:00",
+        "logged_at": "2026-10-02T08:45:58+00:00"
+      },
+      {
+        "event_id": "2c089d184895deb5c327b1f9cbcef03c",
+        "kind": "worker_start",
+        "task_id": 20,
+        "detail": "{\"instruction\": \"Apply approved backend correction: lowercase trimmed email on both create and update in routes/employees.js only. No dependencies/tests/commits. Run syntax check and report.\\n\\nApproved task specification:\\n# Review correction 20\\n\\n## Goal\\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\\n\\n## Scope\\nNormalize email to lowercase in create and update after trimming. Only routes/employees.js. Preserve validation and all CRUD behavior.\\n\\n## Constraints\\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\\n\\n## Completion criteria\\nRequested behavior works and earlier CRUD remains unchanged.\\n\\n## Verification plan\\nManager runs API/browser regression and inspects scope.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:46:23+00:00",
+        "sending_at": "2026-10-02T08:46:23+00:00",
+        "logged_at": "2026-10-02T08:46:23+00:00"
+      },
+      {
+        "event_id": "d37749fd47ee9e8f347619d4d7600ab3",
+        "kind": "workspace_creation",
+        "task_id": null,
+        "detail": "{\"label\": \"herdr-employee-repeat (17)\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:46:23+00:00",
+        "sending_at": "2026-10-02T08:46:23+00:00",
+        "logged_at": "2026-10-02T08:46:24+00:00"
+      },
+      {
+        "event_id": "ccfc72f06beb480b3d02c0bd7b9f96fa",
+        "kind": "worker_pane",
+        "task_id": 20,
+        "detail": "{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-20\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:46:24+00:00",
+        "sending_at": "2026-10-02T08:46:24+00:00",
+        "logged_at": "2026-10-02T08:46:24+00:00"
+      },
+      {
+        "event_id": "35a9d7a0cf79528a32fade8f1aed86c1",
+        "kind": "worker_start",
+        "task_id": 21,
+        "detail": "{\"instruction\": \"Apply approved frontend correction: Refresh button id refresh-btn near list heading invoking loadEmployees. Touch public/index.html and public/javascripts/employees.js only, preserve CRUD. No dependencies/tests/commits. Run syntax check and report.\\n\\nApproved task specification:\\n# Review correction 21\\n\\n## Goal\\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\\n\\n## Scope\\nAdd an accessible Refresh button id refresh-btn near list heading, clicking invokes existing loadEmployees. Only public/index.html and public/javascripts/employees.js. Preserve CRUD/error/safe-render behavior.\\n\\n## Constraints\\nNo npm, dependencies, commits, test changes or Handrail/Vikunja actions. Work only in assigned worktree.\\n\\n## Completion criteria\\nRequested behavior works and earlier CRUD remains unchanged.\\n\\n## Verification plan\\nManager runs API/browser regression and inspects scope.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:46:36+00:00",
+        "sending_at": "2026-10-02T08:46:36+00:00",
+        "logged_at": "2026-10-02T08:46:36+00:00"
+      },
+      {
+        "event_id": "6567329d33c56f901d2d039020e68874",
+        "kind": "worker_pane",
+        "task_id": 21,
+        "detail": "{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-21\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:46:36+00:00",
+        "sending_at": "2026-10-02T08:46:36+00:00",
+        "logged_at": "2026-10-02T08:46:37+00:00"
+      },
+      {
+        "event_id": "f813506f0bf85abce09f82c09ec4b4fc",
+        "kind": "terminal_response",
+        "task_id": 20,
+        "detail": "{\"keys\": [\"enter\"], \"reason\": \"Inspected terminal: exact approved instruction is present in input buffer, not submitted; press Enter once without duplicating text.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:47:20+00:00",
+        "sending_at": "2026-10-02T08:47:20+00:00",
+        "logged_at": "2026-10-02T08:47:21+00:00"
+      },
+      {
+        "event_id": "39632eb0ffb7373c5de57c09aaf35e19",
+        "kind": "terminal_response",
+        "task_id": 21,
+        "detail": "{\"keys\": [\"enter\"], \"reason\": \"Inspected terminal: exact approved instruction is present in input buffer, not submitted; press Enter once without duplicating text.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:47:22+00:00",
+        "sending_at": "2026-10-02T08:47:22+00:00",
+        "logged_at": "2026-10-02T08:47:22+00:00"
+      },
+      {
+        "event_id": "e279991a4d0fd0aed8b74e2e24246945",
+        "kind": "delivery_reconciliation",
+        "task_id": 20,
+        "detail": "{\"agent\": \"work-20\", \"evidence\": \"Full exact task instruction was in Cursor input; audited Enter submitted it without duplicate text. Agent is now working.\", \"resolution\": \"delivered\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:47:23+00:00",
+        "sending_at": "2026-10-02T08:47:23+00:00",
+        "logged_at": "2026-10-02T08:47:24+00:00"
+      },
+      {
+        "event_id": "16740ed31c6c7c4f90841a3569359f4d",
+        "kind": "delivery_reconciliation",
+        "task_id": 21,
+        "detail": "{\"agent\": \"work-21\", \"evidence\": \"Full exact task instruction was in Cursor input; audited Enter submitted it without duplicate text. Agent is now working.\", \"resolution\": \"delivered\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:47:24+00:00",
+        "sending_at": "2026-10-02T08:47:24+00:00",
+        "logged_at": "2026-10-02T08:47:25+00:00"
+      },
+      {
+        "event_id": "4d38e62d5b9ad670351dfad56449ca57",
+        "kind": "orchestration_review",
+        "task_id": 20,
+        "detail": "{\"decision\": \"accept\", \"diff_sha256\": \"be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3\", \"notes\": \"Reviewed normalization: email.trim().toLowerCase() applied through shared create/update normalization. No unrelated changes.\", \"tree\": \"4fa1b573dc5b32d4d472ef44fbb7af5ebdb78071\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:48:53+00:00",
+        "sending_at": "2026-10-02T08:48:53+00:00",
+        "logged_at": "2026-10-02T08:48:53+00:00"
+      },
+      {
+        "event_id": "bf09f6e50bc5803af45690e72c637cc8",
+        "kind": "integration",
+        "task_id": 20,
+        "detail": "{\"base\": \"868415481d16bff00f0944ba532612b6628c7ef2\", \"diff_sha256\": \"be62009b05b32d416a137d93581508c781db14059fee18e528d037ed5e5263a3\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:48:54+00:00",
+        "sending_at": "2026-10-02T08:48:54+00:00",
+        "logged_at": "2026-10-02T08:48:54+00:00"
+      },
+      {
+        "event_id": "e3061fdf052d54ec8ce61d952a1076ee",
+        "kind": "orchestration_review",
+        "task_id": 21,
+        "detail": "{\"decision\": \"accept\", \"diff_sha256\": \"c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940\", \"notes\": \"Reviewed refresh button type button and handler loadEmployees; source existing CRUD unchanged. No unrelated files.\", \"tree\": \"825c07efa60c5d2bd3a36f98d2062405ede97e0f\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:48:55+00:00",
+        "sending_at": "2026-10-02T08:48:55+00:00",
+        "logged_at": "2026-10-02T08:48:55+00:00"
+      },
+      {
+        "event_id": "f0f3d15f85d19c441a15d2498cbfe2b2",
+        "kind": "integration",
+        "task_id": 21,
+        "detail": "{\"base\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\", \"diff_sha256\": \"c01f1fdfa2e9aab9058ccbd7c4051d932462a1cdb9d3e8dab2c0a6faf3011940\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:48:57+00:00",
+        "sending_at": "2026-10-02T08:48:57+00:00",
+        "logged_at": "2026-10-02T08:48:57+00:00"
+      },
+      {
+        "event_id": "98d4bcc7276fd17ffe22d7144f1b7100",
+        "kind": "assignment",
+        "task_id": 22,
+        "detail": "{\"assigned_at\": \"2026-10-02T08:49:50+00:00\", \"effort\": null, \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:49:50+00:00",
+        "sending_at": "2026-10-02T08:49:50+00:00",
+        "logged_at": "2026-10-02T08:49:50+00:00"
+      },
+      {
+        "event_id": "93c5b1525f83bd746885c90d82009f73",
+        "kind": "worker_start",
+        "task_id": 22,
+        "detail": "{\"instruction\": \"Write README.md only following approved specification: npm start, browser UI, employee API endpoints and in-memory data reset on restart. No other files or commands needed. Report completion.\\n\\nApproved task specification:\\n# Run guide\\n\\n## Goal\\nDocument running the employee CRUD demonstration.\\n\\n## Scope\\nOnly README.md. Mention npm start, /api/employees, browser UI use, and in-memory storage resetting on restart.\\n\\n## Constraints\\nDo not edit code, dependencies, tests or commit. No external requests.\\n\\n## Completion criteria\\nA new developer can run the app and understand the demo storage limitation.\\n\\n## Verification plan\\nManager inspects README and verifies required commands are present.\\n\\n\\nReport changed files, checks run, and any unresolved issues. Stay within the approved scope.\", \"model\": \"auto\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:49:53+00:00",
+        "sending_at": "2026-10-02T08:49:53+00:00",
+        "logged_at": "2026-10-02T08:49:53+00:00"
+      },
+      {
+        "event_id": "c18dbb383d7aa55c107dc38a3e406e7c",
+        "kind": "worker_pane",
+        "task_id": 22,
+        "detail": "{\"pane_parent\": \"wS:p1\", \"worktree\": \"/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-22\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:49:53+00:00",
+        "sending_at": "2026-10-02T08:49:53+00:00",
+        "logged_at": "2026-10-02T08:49:54+00:00"
+      },
+      {
+        "event_id": "baa0cb4255c5385f9b4997d470f1a3a1",
+        "kind": "worker_dispatched",
+        "task_id": 22,
+        "detail": "{\"agent\": \"work-22\", \"model\": \"auto\", \"pane\": \"wS:p4\", \"prompted_at\": \"2026-10-02T08:50:07+00:00\", \"provider\": \"cursor\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:50:07+00:00",
+        "sending_at": "2026-10-02T08:50:07+00:00",
+        "logged_at": "2026-10-02T08:50:07+00:00"
+      },
+      {
+        "event_id": "314704ed183c249515ac19a069996657",
+        "kind": "verification_started",
+        "task_id": 20,
+        "detail": "{\"commit\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:50:22+00:00",
+        "sending_at": "2026-10-02T08:50:22+00:00",
+        "logged_at": "2026-10-02T08:50:22+00:00"
+      },
+      {
+        "event_id": "9fbf9b615e06ead0658c44b285ae67bb",
+        "kind": "worker_completion",
+        "task_id": 20,
+        "detail": "{\"checks\": [{\"check_id\": \"api-crud\", \"exit_code\": 0, \"output\": \"\\u001b[0mGET /api/employees \\u001b[32m200 \\u001b[0m3.915 ms - 2\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[33m400 \\u001b[0m7.838 ms - 28\\u001b[0m\\n\\u001b[0mPOST /api/employees \\u001b[32m201 \\u001b[0m0.620 ms - 74\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[32m200 \\u001b[0m0.577 ms - 74\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[32m200 \\u001b[0m0.475 ms - 69\\u001b[0m\\n\\u001b[0mPUT /api/employees/1 \\u001b[33m400 \\u001b[0m0.287 ms - 28\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[32m204 \\u001b[0m0.180 ms - -\\u001b[0m\\n\\u001b[0mGET /api/employees/1 \\u001b[33m404 \\u001b[0m0.307 ms - 30\\u001b[0m\\n\\u001b[0mDELETE /api/employees/1 \\u001b[33m404 \\u001b[0m0.140 ms - 30\\u001b[0m\\n\\u001b[0mGET / \\u001b[32m200 \\u001b[0m1.839 ms - 1145\\u001b[0m\\n✔ employee CRUD, validation, and missing records (119.731208ms)\\nℹ tests 1\\nℹ suites 0\\nℹ pass 1\\nℹ fail 0\\nℹ cancelled 0\\nℹ skipped 0\\nℹ todo 0\\nℹ duration_ms 613.146386\\n\", \"status\": \"passed\"}, {\"check_id\": \"email-normalization\", \"evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\", \"status\": \"passed\"}], \"commit\": \"cd1c6a24a070b00c5a9264e27712e0861167fcf2\", \"head\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"user_evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:50:23+00:00",
+        "sending_at": "2026-10-02T08:50:23+00:00",
+        "logged_at": "2026-10-02T08:50:23+00:00"
+      },
+      {
+        "event_id": "3d54feeed5053a17c6b50ad28ff97871",
+        "kind": "verification_started",
+        "task_id": 21,
+        "detail": "{\"commit\": \"c10cb3eb58caacb06f0232d7952d686df4807a68\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:50:25+00:00",
+        "sending_at": "2026-10-02T08:50:25+00:00",
+        "logged_at": "2026-10-02T08:50:25+00:00"
+      },
+      {
+        "event_id": "5fafe92efed3159201161172d7cfa572",
+        "kind": "worker_completion",
+        "task_id": 21,
+        "detail": "{\"checks\": [{\"check_id\": \"frontend-syntax\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}, {\"check_id\": \"refresh-browser\", \"evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\", \"status\": \"passed\"}], \"commit\": \"c10cb3eb58caacb06f0232d7952d686df4807a68\", \"head\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"user_evidence\": \"Chromium passed mixed-case email create/update normalization, external record reload via Refresh, full CRUD regression, XSS literal rendering and API error display.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:50:26+00:00",
+        "sending_at": "2026-10-02T08:50:26+00:00",
+        "logged_at": "2026-10-02T08:50:26+00:00"
+      },
+      {
+        "event_id": "856305f95e83e75a295135decc633f00",
+        "kind": "orchestration_review",
+        "task_id": 22,
+        "detail": "{\"decision\": \"accept\", \"diff_sha256\": \"419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5\", \"notes\": \"README accurately describes npm start, root UI, all employee CRUD endpoints and in-memory reset limitation. Only README added.\", \"tree\": \"0be87f8996e766f643061e6abeed7325860cd536\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:16+00:00",
+        "sending_at": "2026-10-02T08:51:16+00:00",
+        "logged_at": "2026-10-02T08:51:16+00:00"
+      },
+      {
+        "event_id": "ddc5c4c914a2eeae3bb177970636d66f",
+        "kind": "integration",
+        "task_id": 22,
+        "detail": "{\"base\": \"df2df23974656ce1b826a4bf53b672063bab890c\", \"diff_sha256\": \"419632337ebeca09dcb893a8965f0eb4f113bcebd5d68729642d7a13e686f9c5\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:17+00:00",
+        "sending_at": "2026-10-02T08:51:17+00:00",
+        "logged_at": "2026-10-02T08:51:17+00:00"
+      },
+      {
+        "event_id": "2d41d32888f20edc2698c48e65904419",
+        "kind": "verification_started",
+        "task_id": 22,
+        "detail": "{\"commit\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:19+00:00",
+        "sending_at": "2026-10-02T08:51:19+00:00",
+        "logged_at": "2026-10-02T08:51:19+00:00"
+      },
+      {
+        "event_id": "fefdf7bf694cbb2baa19f8eb1595518d",
+        "kind": "worker_completion",
+        "task_id": 22,
+        "detail": "{\"checks\": [{\"check_id\": \"run-guide\", \"exit_code\": 0, \"output\": \"\", \"status\": \"passed\"}], \"commit\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\", \"head\": \"d9ccf267113930b181c4cbc43e46177affd41c7a\", \"user_evidence\": \"README contents inspected against implemented application.\"}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:19+00:00",
+        "sending_at": "2026-10-02T08:51:19+00:00",
+        "logged_at": "2026-10-02T08:51:20+00:00"
+      },
+      {
+        "event_id": "3bc0ba06ebc08b3eaaaf069f2a707afe",
+        "kind": "plan_verification_started",
+        "task_id": null,
+        "detail": "{}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:21+00:00",
+        "sending_at": "2026-10-02T08:51:21+00:00",
+        "logged_at": "2026-10-02T08:51:21+00:00"
+      },
+      {
+        "event_id": "43ad62373e3e25f654be1518f57f8a14",
+        "kind": "plan_verification_finished",
+        "task_id": null,
+        "detail": "{\"verified\": true}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:22+00:00",
+        "sending_at": "2026-10-02T08:51:22+00:00",
+        "logged_at": "2026-10-02T08:51:23+00:00"
+      },
+      {
+        "event_id": "cfad8455ba0d9579658c01a38ab7b2cd",
+        "kind": "review_submission",
+        "task_id": null,
+        "detail": "{\"space_retained\": {\"created_at\": \"2026-10-02T08:46:24+00:00\", \"label\": \"herdr-employee-repeat (17)\", \"root_pane\": \"wS:p1\", \"workspace_id\": \"wS\"}}",
+        "status": "logged",
+        "created_at": "2026-10-02T08:51:23+00:00",
+        "sending_at": "2026-10-02T08:51:23+00:00",
+        "logged_at": "2026-10-02T08:51:23+00:00"
+      }
+    ],
+    "reviews": []
+  },
+  "spaces": {
+    "id": "cli:workspace:list",
+    "result": {
+      "type": "workspace_list",
+      "workspaces": [
+        {
+          "active_tab_id": "wS:t1",
+          "agent_status": "done",
+          "focused": true,
+          "label": "herdr-employee-repeat (17)",
+          "number": 1,
+          "pane_count": 4,
+          "tab_count": 4,
+          "workspace_id": "wS"
+        }
+      ]
+    }
+  },
+  "agents": {
+    "id": "cli:agent:list",
+    "result": {
+      "agents": [
+        {
+          "agent": "cursor",
+          "agent_session": {
+            "agent": "cursor",
+            "kind": "id",
+            "source": "herdr:cursor",
+            "value": "695bffe6-b892-4f8e-894e-2b1764afefb7"
+          },
+          "agent_status": "done",
+          "cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-20",
+          "focused": false,
+          "foreground_cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-20",
+          "interactive_ready": true,
+          "name": "work-20",
+          "pane_id": "wS:p2",
+          "revision": 3,
+          "state_change_seq": 255,
+          "tab_id": "wS:t2",
+          "terminal_id": "term_65cd791395a0629",
+          "terminal_title": "Implement Work Card",
+          "terminal_title_stripped": "Implement Work Card",
+          "workspace_id": "wS"
+        },
+        {
+          "agent": "cursor",
+          "agent_session": {
+            "agent": "cursor",
+            "kind": "id",
+            "source": "herdr:cursor",
+            "value": "3e5592d4-91a4-4745-a2d3-43a0f06ad3f7"
+          },
+          "agent_status": "done",
+          "cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-21",
+          "focused": false,
+          "foreground_cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-21",
+          "interactive_ready": true,
+          "name": "work-21",
+          "pane_id": "wS:p3",
+          "revision": 3,
+          "state_change_seq": 256,
+          "tab_id": "wS:t3",
+          "terminal_id": "term_65cd791fbb72e2a",
+          "terminal_title": "Implement Work Card",
+          "terminal_title_stripped": "Implement Work Card",
+          "workspace_id": "wS"
+        },
+        {
+          "agent": "cursor",
+          "agent_session": {
+            "agent": "cursor",
+            "kind": "id",
+            "source": "herdr:cursor",
+            "value": "97b27c49-f5af-4a15-98b9-c64d9d328ad3"
+          },
+          "agent_status": "done",
+          "cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-22",
+          "focused": false,
+          "foreground_cwd": "/home/dyhwang23/.local/share/handrail/projects/0eb34a5efd79400aa6ad47f8ffe0be16/herdr-worktrees/17/work-22",
+          "interactive_ready": true,
+          "name": "work-22",
+          "pane_id": "wS:p4",
+          "revision": 3,
+          "state_change_seq": 259,
+          "tab_id": "wS:t4",
+          "terminal_id": "term_65cd79dbe07c42b",
+          "terminal_title": "Implement Work Card",
+          "terminal_title_stripped": "Implement Work Card",
+          "workspace_id": "wS"
+        }
+      ],
+      "type": "agent_list"
+    }
+  }
+}
